@@ -1,137 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
+    <!--- favicon -->
+    <link rel="shortcut icon" href="./assets/images/my-avatar.png"
+      type="image/x-icon">
 
-  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
+    <!--- custom css link-->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
-  <link rel="stylesheet" href="css/aos.css">
+    <!--- google font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet">
+  </head>
 
-  <link rel="stylesheet" href="css/ionicons.min.css">
+  <body>
 
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <!--- #MAIN -->
 
+    <main>
 
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+      <!-- #SIDEBAR-->
 
-<body>
+      <aside class="sidebar" data-sidebar>
 
-  <div id="custom-design-page">
-    <a href="#" class="js-custom-design-nav-toggle custom-design-nav-toggle"><i></i></a>
-    <aside id="custom-design-aside" role="complementary" class="js-fullheight text-center">
-      <h1 id="custom-design-logo"><a href="index.html"><span class="img"
-            style="background-image: url(images/author.jpg);"></span>Kartik Dhiman</a></h1>
-      <nav id="custom-design-main-menu" role="navigation">
-        <ul>
-          <li class="custom-design-active"><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-        </ul>
-      </nav>
+        <div class="sidebar-info">
 
-      <div class="custom-design-footer">
-        <h3>Newsletter</h3>
-        <div class="d-flex justify-content-center">
-          <form action="#" class="custom-design-subscribe-form">
-            <div class="form-group d-flex">
-              <div class="icon"><span class="icon-paper-plane"></span></div>
-              <input type="text" class="form-control" placeholder="Enter Email Address">
-            </div>
-          </form>
+          <figure class="avatar-box">
+            <img src="./assets/images/my-avatar.png" alt="Kartik Dhiman"
+              width="80">
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Kartik Dhiman">Kartik Dhiman</h1>
+
+            <p class="title">Software Developer</p>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+
         </div>
-      </div>
-    </aside> <!-- END custom-design-ASIDE -->
-    <div id="custom-design-main">
-      <section class="custom-section-no-padding bg-light">
-        <div class="hero-wrap">
-          <div class="overlay"></div>
-          <div class="d-flex align-items-center js-fullheight">
-            <div class="author-image text img d-flex">
-              <section class="home-slider js-fullheight owl-carousel">
-                <div class="slider-item js-fullheight" style="background-image: url(images/author.jpg);">
+
+        <div class="sidebar-info_more">
+
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+
+            <li class="contact-item">
+
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title"></p>
+                <a style="color: white;" href="mailto:ikartikdhiman@gmail.com"
+                  class="contact-link">Email</a>
+              </div>
+
+            </li>
+
+            <li class="contact-item">
+
+              <div class="icon-box">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title"></p>
+                <a style="color: white;"
+                  href="https://linkedin.com/in/kartik-dhiman"
+                  class="social-link">LinkedIn
+                </a>
+              </div>
+
+            </li>
+
+            <li class="contact-item">
+
+              <div class="icon-box">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title"></p>
+                <a style="color: white;"
+                  href="https://instagram.com/sporadical_traveller"
+                  class="social-link">Social
+                </a>
+              </div>
+
+            </li>
+
+            <li class="contact-item">
+
+              <div class="icon-box">
+                <ion-icon name="logo-github"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title"></p>
+                <a style="color: white;" href="https://github.com/kartik-dhiman"
+                  class="social-link">Github
+                </a>
+              </div>
+
+            </li>
+
+            <li class="contact-item">
+
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <address>New Delhi, India</address>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </aside>
+
+      <!--- #main-content -->
+
+      <div class="main-content">
+
+        <!--- #NAVBAR-->
+
+        <nav class="navbar">
+
+          <ul class="navbar-list">
+
+            <li class="navbar-item">
+              <button class="navbar-link  active" data-nav-link>About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Portfolio</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Blog</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
+
+          </ul>
+
+        </nav>
+
+        <!--- #ABOUT -->
+
+        <article class="about  active" data-page="about">
+
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
+
+          <section class="about-text">
+            <p>
+              I am a Full Time Software Engineer,
+              <pre>
+  - Part time Pianist
+  - Part time Photographer
+              </pre>
+              Exploring all the high, mids and low of this cinematic universe.<br>
+              I enjoy turning complex problems into simple, beautiful and
+              intuitive designs.
+            </p>
+            <p>
+              Our famous Mr. Stark said...
+              <pre>
+Sometimes You Gotta Run Before You Can Walk.
+              </pre>
+            </p>
+          </section>
+
+          <!--- service -->
+
+          <section class="service">
+
+            <h3 class="h3 service-title">What i'm doing</h3>
+
+            <ul class="service-list">
+
+              <li class="service-item">
+
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
                 </div>
 
-                <!-- <div class="slider-item js-fullheight" style="background-image:url(images/author-2.jpg);">
-					      </div> -->
-              </section>
-            </div>
-            <div class="author-info text p-3 p-md-5">
-              <div class="desc">
-                <span class="subheading">Hello! I'm</span>
-                <h1 class="big-letter">Kartik Dhiman</h1>
-                <h1 class="mb-4"><span>Kartik Dhiman</span> <br>A Philanthropist</h1>
-                <p class="mb-4">Pianist (beginner) and a full time Software Engineer, Exploring all the high, mids and
-                  low of this cinematic universe.</p>
-                <p class="mb-4">As Mr. Stark said...<br>Sometimes You Gotta Run Before You Can Walk.</p>
-                <h3 class="signature h1">kArTik</h3>
-                <ul class="custom-social mt-3">
-                  <li class="custom-animate"><a href="https://linkedin.com/in/kartik-dhiman"><span
-                        class="icon-linkedin"></span></a></li>
-                  <li class="custom-animate"><a href="https://github.com/kartik-dhiman"><span
-                        class="icon-github"></span></a></li>
-                  <li class="custom-animate"><a href="https://instagram.com/sporadical_traveller"><span
-                        class="icon-instagram"></span></a></li>
-                </ul>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web design</h4>
+
+                  <p class="service-item-text">
+                    The most modern and high-quality design made at a
+                    professional level.
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="service-item">
+
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-dev.svg"
+                    alt="Web development icon" width="40">
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web development</h4>
+
+                  <p class="service-item-text">
+                    High-quality development of sites at the professional level.
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="service-item">
+
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-app.svg" alt="mobile app icon"
+                    width="40">
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Music</h4>
+
+                  <p class="service-item-text">
+                    Learning to write some mystical spells from all the 81 keys.
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="service-item">
+
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-photo.svg" alt="camera icon"
+                    width="40">
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Photography</h4>
+
+                  <p class="service-item-text">
+                    I make high-quality photos of any category at a professional
+                    level.
+                  </p>
+                </div>
+
+              </li>
+
+            </ul>
+
+          </section>
+
+        </article>
+
+        <!--- #RESUME -->
+
+        <!--- #PORTFOLIO -->
+
+        <!--- #BLOG -->
+
+        <!--- #CONTACT -->
+
+        <article class="contact" data-page="contact">
+
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
+
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15058791.064215578!2d73.26044225503534!3d22.8593613244469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1693156097424!5m2!1sen!2sin"
+                width="400" height="300" loading="lazy"></iframe>
+            </figure>
+          </section>
+
+          <section class="contact-form">
+
+            <h3 class="h3 form-title">Contact Form</h3>
+
+            <form action="#" class="form" data-form>
+
+              <div class="input-wrapper">
+                <input type="text" name="fullname" class="form-input"
+                  placeholder="Full name" required data-form-input>
+
+                <input type="email" name="email" class="form-input"
+                  placeholder="Email address" required data-form-input>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
 
-  <!-- loader -->
-  <div id="custom-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-        stroke="#F96D00" />
-    </svg></div>
+              <textarea name="message" class="form-input"
+                placeholder="Your Message" required data-form-input></textarea>
 
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
+            </form>
 
-</body>
+          </section>
+
+        </article>
+
+      </div>
+
+    </main>
+
+    <!--
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  </body>
 
 </html>
