@@ -174,7 +174,7 @@
 
         <!--- #ABOUT -->
 
-        <article class="about  active" data-page="about">
+        <article class="about  active hover-effect" data-page="about">
 
           <header>
             <h2 class="h2 article-title">About me</h2>
@@ -182,19 +182,23 @@
 
           <section class="about-text">
             <p>
+              Architect of Dreams, Master of Realities
               <pre>
-  - Full Time Software Engineer
-  - Part time Pianist
-  - Part time Photographer
+   👨‍💻 Full-Time Software Engineer
+   🎹 Part-Time Pianist
+   📷 Part-Time Photographer
               </pre>
-              Exploring all the high, mids and low of this cinematic universe.<br>
-              I enjoy turning complex problems into simple, beautiful and
-              intuitive designs.
+              Embarking on an odyssey across the tapestry of the cinematic
+              universe,
+              I revel in the harmonies of highs,
+              the nuances of mids, and the depths of lows.
             </p>
+            💡 I delight in transmuting complexity into designs that are not
+            just solutions but poetry.
             <p>
-              Our famous Mr. Stark said...
+              As the renowned Mr. Stark wisely put it
               <pre>
-Sometimes You Gotta Run Before You Can Walk.
+Sometimes You Gotta Run Before You Can Walk. 🚀✨
               </pre>
             </p>
           </section>
@@ -284,6 +288,10 @@ Sometimes You Gotta Run Before You Can Walk.
         </article>
 
         <!--- #RESUME -->
+        <article class="resume hover-effect" data-page="resume"
+          data-include="resume.html">
+
+        </article>
 
         <!--- #PORTFOLIO -->
 
@@ -349,6 +357,26 @@ Sometimes You Gotta Run Before You Can Walk.
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to include HTML content from a file
+            function includeHTML() {
+                var elements = document.querySelectorAll('[data-include]');
+                elements.forEach(function(element) {
+                    var file = element.getAttribute('data-include');
+                    fetch(file)
+                        .then(response => response.text())
+                        .then(content => {
+                            element.innerHTML = content;
+                        });
+                });
+            }
+    
+            // Call the function to include HTML content
+            includeHTML();
+        });
+    </script>
 
   </body>
 

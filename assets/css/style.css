@@ -2159,4 +2159,18 @@ textarea.form-input::-webkit-resizer {
     max-width: 700px;
   }
 
+  .hover-effect {
+    /* margin: 20px; */
+    transition: transform 3s ease;
+    /* Add a smooth transition for the box-shadow */
+  }
+
+  /* Define the glow effect on hover */
+  .hover-effect section:hover,
+  .hover-effect li:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 30px rgba(199, 199, 199, 0.437);
+  }
+
+
 }
