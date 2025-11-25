@@ -1,237 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
 
-    <!--- favicon -->
-    <link rel="shortcut icon" href="./assets/images/my-avatar.png"
-      type="image/x-icon">
+  <!--- favicon -->
+  <link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon">
 
-    <!--- custom css link-->
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <!--- custom css link-->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!--- google font link-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
-      rel="stylesheet">
-  </head>
+  <!--- google font link-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
 
-  <body>
+<body>
 
-    <!--- #MAIN -->
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
 
-    <main>
+  <!--- #MAIN -->
 
-      <!-- #SIDEBAR-->
+  <main>
 
-      <aside class="sidebar" data-sidebar>
+    <!-- #SIDEBAR-->
 
-        <div class="sidebar-info">
+    <aside class="sidebar" data-sidebar>
 
-          <figure class="avatar-box">
-            <img src="./assets/images/my-avatar.png" alt="Kartik Dhiman"
-              width="80">
-          </figure>
+      <div class="sidebar-info">
 
-          <div class="info-content">
-            <h1 class="name" title="Kartik Dhiman">Kartik Dhiman</h1>
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Kartik Dhiman" width="80">
+        </figure>
 
-            <p class="title">Software Developer</p>
-          </div>
+        <div class="info-content">
+          <h1 class="name" title="Kartik Dhiman">Kartik Dhiman</h1>
 
-          <button class="info_more-btn" data-sidebar-btn>
-            <span>Show Contacts</span>
-
-            <ion-icon name="chevron-down"></ion-icon>
-          </button>
-
+          <p class="title">Software Developer</p>
         </div>
 
-        <div class="sidebar-info_more">
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
 
-          <div class="separator"></div>
-
-          <ul class="contacts-list">
-
-            <li class="contact-item">
-
-              <div class="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
-              </div>
-
-              <div class="contact-info">
-                <p class="contact-title"></p>
-                <a style="color: white;" href="mailto:ikartikdhiman@gmail.com"
-                  class="contact-link" target="_blank" rel="noopener noreferrer">Email</a>
-              </div>
-
-            </li>
-
-            <li class="contact-item">
-
-              <div class="icon-box">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </div>
-
-              <div class="contact-info">
-                <p class="contact-title"></p>
-                <a style="color: white;"
-                  href="https://linkedin.com/in/kartik-dhiman"
-                  class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn
-                </a>
-              </div>
-
-            </li>
-
-            <li class="contact-item">
-
-              <div class="icon-box">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </div>
-
-              <div class="contact-info">
-                <p class="contact-title"></p>
-                <a style="color: white;"
-                  href="https://instagram.com/sporadical_traveller"
-                  class="social-link" target="_blank" rel="noopener noreferrer">Social
-                </a>
-              </div>
-
-            </li>
-
-            <li class="contact-item">
-
-              <div class="icon-box">
-                <ion-icon name="logo-github"></ion-icon>
-              </div>
-
-              <div class="contact-info">
-                <p class="contact-title"></p>
-                <a style="color: white;" href="https://github.com/kartik-dhiman"
-                  class="social-link" target="_blank" rel="noopener noreferrer">Github
-                </a>
-              </div>
-
-            </li>
-
-            <li class="contact-item">
-
-              <div class="icon-box">
-                <ion-icon name="location-outline"></ion-icon>
-              </div>
-
-              <div class="contact-info">
-                <address>New Delhi, India</address>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </div>
-
-      </aside>
-
-      <!--- #main-content -->
-
-      <div class="main-content">
-
-        <!--- #NAVBAR-->
-
-        <nav class="navbar">
-
-          <ul class="navbar-list">
-
-            <li class="navbar-item">
-              <button class="navbar-link  active" data-nav-link>About</button>
-            </li>
-
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Resume</button>
-            </li>
-
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Portfolio</button>
-            </li>
-
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Blog</button>
-            </li>
-
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Contact</button>
-            </li>
-
-          </ul>
-
-        </nav>
-
-        <!--- #ABOUT -->
-
-        <article class="about  active hover-effect" data-page="about"
-          data-include="about.html">
-
-        </article>
-
-        <!--- #RESUME -->
-        <article class="resume hover-effect" data-page="resume"
-          data-include="resume.html">
-
-        </article>
-
-        <!--- #PORTFOLIO -->
-
-        <!--- #BLOG -->
-
-        <!--- #CONTACT -->
-
-        <article class="contact" data-page="contact" data-include="contact.html">
-
-        </article>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
 
       </div>
 
-    </main>
+      <div class="sidebar-info_more">
 
-    <!--
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title"></p>
+              <a style="color: white;" href="mailto:ikartikdhiman@gmail.com" class="contact-link" target="_blank"
+                rel="noopener noreferrer">Email</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title"></p>
+              <a style="color: white;" href="https://linkedin.com/in/kartik-dhiman" class="social-link" target="_blank"
+                rel="noopener noreferrer">LinkedIn
+              </a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title"></p>
+              <a style="color: white;" href="https://instagram.com/sporadical_traveller" class="social-link"
+                target="_blank" rel="noopener noreferrer">Social
+              </a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-github"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title"></p>
+              <a style="color: white;" href="https://github.com/kartik-dhiman" class="social-link" target="_blank"
+                rel="noopener noreferrer">Github
+              </a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <address>New Delhi, India</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+    <!--- #main-content -->
+
+    <div class="main-content">
+
+      <!--- #NAVBAR-->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!--- #ABOUT -->
+
+      <article class="about  active" data-page="about" data-include="about.html">
+
+      </article>
+
+      <!--- #RESUME -->
+      <article class="resume hover-effect" data-page="resume" data-include="resume.html">
+
+      </article>
+
+      <!--- #PORTFOLIO -->
+
+      <article class="portfolio" data-page="portfolio" data-include="portfolio.html">
+
+      </article>
+
+      <!--- #BLOG -->
+
+      <article class="blog" data-page="blog" data-include="blog.html">
+
+      </article>
+
+      <!--- #CONTACT -->
+
+      <article class="contact" data-page="contact" data-include="contact.html">
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <!--
     - custom js link
   -->
-    <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 
-    <!--
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Particle configuration
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#ffa500' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.3, random: true },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#ffa500',
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: true,
+          straight: false,
+          out_mode: 'out',
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'grab' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 0.5 } },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+  <!--
     - ionicon link
   -->
-    <script type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Function to include HTML content from a file
-            function includeHTML() {
-                var elements = document.querySelectorAll('[data-include]');
-                elements.forEach(function(element) {
-                    var file = element.getAttribute('data-include');
-                    fetch(file)
-                        .then(response => response.text())
-                        .then(content => {
-                            element.innerHTML = content;
-                        });
-                });
-            }
-    
-            // Call the function to include HTML content
-            includeHTML();
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Function to include HTML content from a file
+      function includeHTML() {
+        var elements = document.querySelectorAll('[data-include]');
+        elements.forEach(function (element) {
+          var file = element.getAttribute('data-include');
+          fetch(file)
+            .then(response => response.text())
+            .then(content => {
+              element.innerHTML = content;
+            });
         });
-    </script>
+      }
 
-  </body>
+      // Call the function to include HTML content
+      includeHTML();
+    });
+  </script>
+
+</body>
 
 </html>

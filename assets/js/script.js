@@ -137,6 +137,83 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 
+// Function to include HTML content from a file
+function includeHTML(element) {
+  const file = element.getAttribute('data-include');
+  if (file) {
+    fetch(file)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to load ' + file);
+        }
+        return response.text();
+      })
+      .then(content => {
+        element.innerHTML = content;
+        // Reinitialize filter functionality for portfolio page
+        if (element.dataset.page === 'portfolio') {
+          setTimeout(() => {
+            const newFilterItems = element.querySelectorAll('[data-filter-item]');
+            const newFilterBtns = element.querySelectorAll('[data-filter-btn]');
+            const newSelect = element.querySelector('[data-select]');
+            const newSelectItems = element.querySelectorAll('[data-select-item]');
+            const newSelectValue = element.querySelector('[data-selecct-value]');
+
+            // Reinitialize select functionality
+            if (newSelect) {
+              newSelect.addEventListener('click', function () { elementToggleFunc(this); });
+            }
+
+            // Reinitialize select items
+            newSelectItems.forEach(item => {
+              item.addEventListener('click', function () {
+                const selectedValue = this.innerText.toLowerCase();
+                if (newSelectValue) newSelectValue.innerText = this.innerText;
+                if (newSelect) elementToggleFunc(newSelect);
+                filterPortfolio(selectedValue, newFilterItems);
+              });
+            });
+
+            // Reinitialize filter buttons
+            if (newFilterBtns.length > 0) {
+              let lastBtn = newFilterBtns[0];
+              newFilterBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                  const selectedValue = this.innerText.toLowerCase();
+                  if (newSelectValue) newSelectValue.innerText = this.innerText;
+                  filterPortfolio(selectedValue, newFilterItems);
+                  if (lastBtn) lastBtn.classList.remove('active');
+                  this.classList.add('active');
+                  lastBtn = this;
+                });
+              });
+            }
+
+            // Show all items initially
+            filterPortfolio('all', newFilterItems);
+          }, 100);
+        }
+      })
+      .catch(error => {
+        console.error('Error loading content:', error);
+        element.innerHTML = '<p style="color: var(--light-gray); text-align: center;">Error loading content. Please refresh the page.</p>';
+      });
+  }
+}
+
+// Filter function for portfolio
+function filterPortfolio(selectedValue, items) {
+  items.forEach(item => {
+    if (selectedValue === 'all') {
+      item.classList.add('active');
+    } else if (selectedValue === item.dataset.category) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -145,14 +222,15 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
+    for (let j = 0; j < pages.length; j++) {
+      if (this.innerHTML.toLowerCase() === pages[j].dataset.page) {
+        pages[j].classList.add("active");
         navigationLinks[i].classList.add("active");
+        includeHTML(pages[j]); // Load content dynamically
         window.scrollTo(0, 0);
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[j].classList.remove("active");
+        navigationLinks[j].classList.remove("active");
       }
     }
 
