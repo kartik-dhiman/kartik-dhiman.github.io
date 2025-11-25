@@ -1,0 +1,95 @@
+<header>
+    <h2 class="h2 article-title">Blog</h2>
+</header>
+
+<section class="blog-posts">
+
+    <div class="typewriter-container">
+
+        <!-- Typewriter Text -->
+        <h3 class="h2 typewriter-text" id="typewriter"></h3>
+
+        <!-- Blinking Cursor -->
+        <span class="cursor">|</span>
+
+    </div>
+
+</section>
+
+<style>
+    .typewriter-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+        padding: 60px 20px;
+    }
+
+    .typewriter-text {
+        color: var(--orange-yellow-crayola);
+        font-size: var(--fs-1);
+        font-weight: var(--fw-600);
+        font-family: 'Courier New', monospace;
+        letter-spacing: 2px;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .cursor {
+        color: var(--orange-yellow-crayola);
+        font-size: var(--fs-1);
+        font-weight: var(--fw-300);
+        margin-left: 4px;
+        animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+
+        0%,
+        50% {
+            opacity: 1;
+        }
+
+        51%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .typewriter-text {
+            font-size: var(--fs-2);
+        }
+
+        .cursor {
+            font-size: var(--fs-2);
+        }
+    }
+</style>
+
+<script>
+    // Typewriter effect
+    const text = "Coming Soon...";
+    const typewriterElement = document.getElementById('typewriter');
+    let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            typewriterElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 150); // Typing speed
+        } else {
+            // After typing is complete, wait and restart
+            setTimeout(() => {
+                typewriterElement.textContent = '';
+                index = 0;
+                typeWriter();
+            }, 3000); // Wait 3 seconds before restarting
+        }
+    }
+
+    // Start typewriter when page loads
+    setTimeout(typeWriter, 500);
+</script>
