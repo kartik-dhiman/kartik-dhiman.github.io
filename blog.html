@@ -26,22 +26,24 @@
     }
 
     .typewriter-text {
-        color: var(--orange-yellow-crayola);
+        color: var(--accent);
         font-size: var(--fs-1);
         font-weight: var(--fw-600);
-        font-family: 'Courier New', monospace;
+        font-family: var(--ff-mono);
         letter-spacing: 2px;
         margin: 0;
         white-space: nowrap;
         overflow: hidden;
+        text-shadow: 0 0 20px var(--accent-glow);
     }
 
     .cursor {
-        color: var(--orange-yellow-crayola);
+        color: var(--accent);
         font-size: var(--fs-1);
         font-weight: var(--fw-300);
         margin-left: 4px;
         animation: blink 0.7s infinite;
+        text-shadow: 0 0 12px var(--accent-glow);
     }
 
     @keyframes blink {
