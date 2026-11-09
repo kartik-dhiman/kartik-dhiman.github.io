@@ -100,12 +100,12 @@ document.documentElement.removeAttribute('data-theme');
   if (!el) return;
 
   const lines = [
-    'status: all systems operational ✓',
-    'loading portfolio modules...',
-    'skills.import("python", "react", "aws")',
-    'experience.total = "7+ years"',
-    'projects.deployed.count → 50+',
-    'coffee.consumed → ∞',
+    'git status --short',
+    'docker compose up -d backend worker redis',
+    'pytest tests/integration/ -v --benchmark',
+    'kubectl get pods -n production -l app=core-api',
+    'curl -s https://api.kartikdhiman.dev/health | jq .status',
+    'python -m etl.pipeline --mode=incremental'
   ];
 
   let lineIdx = 0;
@@ -155,7 +155,7 @@ document.documentElement.removeAttribute('data-theme');
         observer.unobserve(el);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.15 });
 
   nums.forEach(n => observer.observe(n));
 
@@ -174,55 +174,48 @@ document.documentElement.removeAttribute('data-theme');
   }
 })();
 
-// ===== Active Nav Link on Scroll =====
-(function scrollNav() {
-  const sections = document.querySelectorAll('.hero, .section');
-  const links = document.querySelectorAll('.nav-link');
-  const navbar = document.getElementById('navbar');
+// ===== Illuminating Floating HUD Dock (Reveals from Page 2 onwards) =====
+(function floatingHUD() {
+  const dock = document.getElementById('floatingDock');
+  const hero = document.getElementById('hero');
+  const items = document.querySelectorAll('.dock-nav-item');
+  const sections = document.querySelectorAll('.section');
+  if (!dock) return;
 
-  // Nav scroll shadow
-  window.addEventListener('scroll', () => {
-    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+  function handleScroll() {
+    const heroH = hero ? hero.offsetHeight : 600;
+    // Reveal once user scrolls past 60% of the first page
+    if (window.scrollY > heroH * 0.6) {
+      dock.classList.add('dock-visible');
+    } else {
+      dock.classList.remove('dock-visible');
+    }
+  }
 
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // Active section illumination
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.id;
-        links.forEach(l => l.classList.toggle('active', l.getAttribute('data-target') === id));
+        items.forEach(item => {
+          item.classList.toggle('active', item.getAttribute('data-nav') === id);
+        });
       }
     });
-  }, { threshold: 0.25, rootMargin: '-80px 0px 0px 0px' });
+  }, { threshold: 0.2, rootMargin: '-80px 0px -40% 0px' });
 
   sections.forEach(s => {
     if (s.id) observer.observe(s);
   });
 })();
 
-// ===== Mobile Hamburger Menu =====
-(function burgerMenu() {
-  const burger = document.getElementById('navBurger');
-  const links = document.getElementById('navLinks');
-  if (!burger || !links) return;
-
-  burger.addEventListener('click', () => {
-    links.classList.toggle('open');
-    burger.classList.toggle('open');
-  });
-
-  // Close on link click
-  links.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      links.classList.remove('open');
-      burger.classList.remove('open');
-    });
-  });
-})();
-
 // ===== Reveal on Scroll =====
 (function reveal() {
   const els = document.querySelectorAll(
-    '.timeline-item, .tech-showcase, .project-row, .big-heading, .contact-inner, .stat-card, .about-body, .code-preview, .passion-card'
+    '.timeline-item, .tech-showcase, .project-row, .contact-inner, .code-preview'
   );
   els.forEach(el => el.classList.add('reveal'));
 
@@ -238,8 +231,8 @@ document.documentElement.removeAttribute('data-theme');
   els.forEach(el => observer.observe(el));
 })();
 
-// ===== Smooth Scroll for Nav Links =====
-document.querySelectorAll('.nav-link, .btn-glow, .btn-outline').forEach(link => {
+// ===== Smooth Scroll for Navigation & Action Links =====
+document.querySelectorAll('.dock-btn, .dock-nav-item, .dock-action-btn, .dock-brand, .strip-action, .nav-link, .btn-glow, .btn-outline, .floating-back-top, .hero-brand-logo').forEach(link => {
   link.addEventListener('click', e => {
     const href = link.getAttribute('href');
     if (href && href.startsWith('#')) {
@@ -250,6 +243,15 @@ document.querySelectorAll('.nav-link, .btn-glow, .btn-outline').forEach(link => 
     }
   });
 });
+
+// ===== Floating Return to Top Pill =====
+(function backToTop() {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('show', window.scrollY > 350);
+  }, { passive: true });
+})();
 
 // ===== Particles =====
 document.addEventListener('DOMContentLoaded', function () {

@@ -8,7 +8,7 @@
   <title>Kartik Dhiman — Software Engineer</title>
   <meta name="description" content="Portfolio of Kartik Dhiman — Senior Software Engineer, Pianist, and Photographer.">
   <link rel="shortcut icon" href="./assets/images/my-avatar.png?v=2" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css?v=8">
+  <link rel="stylesheet" href="./assets/css/style.css?v=23">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,80 +19,205 @@
   <!-- Scanline overlay -->
   <div class="scanlines"></div>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar" id="navbar">
-    <a href="#hero" class="nav-logo" aria-label="Kartik Dhiman">
-      <div class="logo-emblem">
-        <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Cyber frame -->
-          <rect x="2.5" y="2.5" width="39" height="39" rx="11" class="logo-bg" />
-          <!-- Neon Corner Accents -->
-          <path d="M7 13V8C8 7 13 7 13 7" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M37 31V36C36 37 31 37 31 37" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/>
-          <!-- K Monogram -->
-          <path d="M14 13V31" stroke="var(--accent)" stroke-width="2.8" stroke-linecap="round" class="logo-k-stem"/>
-          <path d="M23 14L14.5 22L23.5 30" stroke="var(--accent)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" class="logo-k-arms"/>
-          <!-- D Monogram Intersecting -->
-          <path d="M22 13H26C30.4 13 33.5 16.5 33.5 22C33.5 27.5 30.4 31 26 31H22" stroke="var(--green)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" class="logo-d-curve"/>
-          <!-- Center glow core -->
-          <circle cx="22" cy="22" r="1.6" fill="var(--amber)" class="logo-core"/>
-        </svg>
+  <!-- ===== ILLUMINATING FLOATING HUD DOCK (Reveals when scrolling past Cockpit) ===== -->
+  <nav class="illuminating-dock" id="floatingDock" aria-label="Quick Navigation">
+    <div class="dock-glow-aura"></div>
+    <div class="dock-light-runner"></div>
+    <div class="dock-container">
+      <a href="#hero" class="dock-brand" aria-label="Return to Command Center">
+        <span class="dock-brand-text">&lt;<span class="cyan">K</span><span class="green">D</span>/&gt;</span>
+        <span class="dock-live-pulse"></span>
+      </a>
+      <div class="dock-divider"></div>
+      <div class="dock-links">
+        <a href="#hero" class="dock-nav-item" data-nav="hero">
+          <ion-icon name="person-outline"></ion-icon>
+          <span>Overview</span>
+        </a>
+        <a href="#work" class="dock-nav-item" data-nav="work">
+          <ion-icon name="briefcase-outline"></ion-icon>
+          <span>Experience</span>
+        </a>
+        <a href="#tech" class="dock-nav-item" data-nav="tech">
+          <ion-icon name="layers-outline"></ion-icon>
+          <span>Tech Stack</span>
+        </a>
+        <a href="#projects" class="dock-nav-item" data-nav="projects">
+          <ion-icon name="code-slash-outline"></ion-icon>
+          <span>Projects</span>
+        </a>
       </div>
-      <div class="logo-text">
-        <span class="logo-code-bracket">&lt;</span>
-        <span class="logo-k-char">K</span>
-        <span class="logo-d-char">D</span>
-        <span class="logo-code-slash">/&gt;</span>
-      </div>
-      <span class="logo-status-chip">
-        <span class="logo-dot"></span>
-        <span class="logo-chip-text">v5.0</span>
-      </span>
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#hero" class="nav-link active" data-target="hero">Home</a>
-      <a href="#about" class="nav-link" data-target="about">About</a>
-      <a href="#work" class="nav-link" data-target="work">Experience</a>
-      <a href="#projects" class="nav-link" data-target="projects">Projects</a>
-      <a href="#contact" class="nav-link" data-target="contact">Contact</a>
-    </nav>
-    <!-- Mobile hamburger -->
-    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+      <a href="#contact" class="dock-action-btn">
+        <ion-icon name="flash-outline"></ion-icon>
+        <span>Connect</span>
+      </a>
+    </div>
+  </nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
+  <!-- ===== COMMAND CENTER: HERO & ABOUT (MERGED) ===== -->
+  <section class="hero hero-merged" id="hero">
     <!-- Grid background for hero -->
     <div class="hero-grid-bg"></div>
-    <div class="hero-content">
-      <div class="hero-avatar-col">
-        <div class="hero-avatar-wrap">
-          <img src="./assets/images/my-avatar.png?v=2" alt="Kartik Dhiman" class="hero-avatar-img">
-          <div class="avatar-ring"></div>
-          <div class="avatar-glow"></div>
-          <!-- Scan line on avatar -->
-          <div class="avatar-scan"></div>
+
+    <div class="hero-cockpit">
+      <!-- ===== WING 1: IDENTITY, HEADLINE & BIO ===== -->
+      <div class="hero-profile-col">
+        <!-- Identity Row: Avatar + Greeting & Dynamic Roles -->
+        <div class="hero-identity-row">
+          <div class="hero-avatar-wrap">
+            <div class="avatar-mask">
+              <img src="./assets/images/my-avatar.png?v=2" alt="Kartik Dhiman" class="hero-avatar-img">
+            </div>
+            <div class="avatar-ring"></div>
+            <div class="avatar-glow"></div>
+            <div class="avatar-scan"></div>
+          </div>
+
+          <div class="hero-greeting-box">
+            <p class="hero-greeting">Hello! I Am <span class="highlight">Kartik Dhiman</span></p>
+            <p class="hero-label" id="heroLabel">A Software Engineer who</p>
+            <h1 class="hero-headline" id="heroHeadline">Builds systems<br>that <span class="highlight-circle">scale</span>...</h1>
+            <p class="hero-sub" id="heroSub">Because if the architecture is right, everything else follows.</p>
+          </div>
         </div>
-      </div>
-      <div class="hero-text-col">
-        <p class="hero-greeting">Hello! I Am <span class="highlight">Kartik Dhiman</span></p>
-        <p class="hero-label" id="heroLabel">A Software Engineer who</p>
-        <h1 class="hero-headline" id="heroHeadline">Builds systems<br>that <span class="highlight-circle">scale</span>...</h1>
-        <p class="hero-sub" id="heroSub">Because if the architecture is right, everything else follows.</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn-glow">Let's Connect <ion-icon name="arrow-forward-outline"></ion-icon></a>
-          <a href="#projects" class="btn-outline">View Work</a>
-        </div>
-        <!-- Terminal-style status -->
+
+        <!-- Narrative Bio -->
+        <p class="hero-bio">
+          Senior Software Engineer specializing in resilient distributed architectures, AI engineering, and high-throughput pipelines. Blending high-performance systems engineering with creative artistry across piano harmonies and visual storytelling.
+        </p>
+
+        <!-- Command Teleport Actions -->
+        <nav class="hero-nav-dock" aria-label="Section Navigation">
+          <a href="#contact" class="dock-btn dock-btn-primary">
+            <ion-icon name="paper-plane-outline"></ion-icon>
+            <span>Let's Connect</span>
+          </a>
+          <a href="#work" class="dock-btn">
+            <ion-icon name="briefcase-outline"></ion-icon>
+            <span>Experience</span>
+          </a>
+          <a href="#tech" class="dock-btn">
+            <ion-icon name="layers-outline"></ion-icon>
+            <span>Tech Stack</span>
+          </a>
+          <a href="#projects" class="dock-btn">
+            <ion-icon name="code-slash-outline"></ion-icon>
+            <span>Projects</span>
+          </a>
+        </nav>
+
+        <!-- Terminal status console -->
         <div class="hero-terminal">
           <span class="term-prompt">$</span>
           <span class="term-text" id="terminalText"></span>
           <span class="term-cursor">█</span>
         </div>
       </div>
+
+      <!-- ===== WING 2: BENTO HUD (STATS + PASSIONS + MISSION) ===== -->
+      <div class="hero-bento-col" id="about">
+        <!-- Bento Header Tag -->
+        <div class="bento-header">
+          <div class="bento-badge">
+            <span class="bento-pulse"></span>
+            <span class="bento-title">CAREER IMPACT &amp; METRICS</span>
+          </div>
+          <span class="bento-tag">2018 — PRESENT</span>
+        </div>
+
+        <!-- 4 Stat Cards in 2x2 Grid -->
+        <div class="bento-stats-grid">
+          <div class="bento-stat-card">
+            <div class="stat-top">
+              <div class="stat-val-group">
+                <span class="stat-num" data-count="7">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-icon-pill"><ion-icon name="time-outline"></ion-icon></span>
+            </div>
+            <span class="stat-label">Years Experience</span>
+            <span class="stat-meta">Senior Backend &amp; Architecture</span>
+          </div>
+
+          <div class="bento-stat-card">
+            <div class="stat-top">
+              <div class="stat-val-group">
+                <span class="stat-num" data-count="30">0</span><span class="stat-suffix">%</span>
+              </div>
+              <span class="stat-icon-pill"><ion-icon name="flash-outline"></ion-icon></span>
+            </div>
+            <span class="stat-label">Efficiency Boost</span>
+            <span class="stat-meta">Latency Reduction &amp; Scaling</span>
+          </div>
+
+          <div class="bento-stat-card">
+            <div class="stat-top">
+              <div class="stat-val-group">
+                <span class="stat-num" data-count="50">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-icon-pill"><ion-icon name="cloud-upload-outline"></ion-icon></span>
+            </div>
+            <span class="stat-label">Production Deploys</span>
+            <span class="stat-meta">Microservices &amp; ETL Pipelines</span>
+          </div>
+
+          <div class="bento-stat-card">
+            <div class="stat-top">
+              <div class="stat-val-group">
+                <span class="stat-num" data-count="20">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-icon-pill"><ion-icon name="people-outline"></ion-icon></span>
+            </div>
+            <span class="stat-label">Engineers Mentored</span>
+            <span class="stat-meta">Code Reviews &amp; Tech Growth</span>
+          </div>
+        </div>
+
+        <!-- Beyond Code — Dual Passion Cards with Equalizer & Viewfinder -->
+        <div class="bento-passions-grid">
+          <!-- Pianist & Composer -->
+          <div class="bento-passion-card">
+            <div class="passion-header">
+              <div class="passion-icon piano-icon">
+                <ion-icon name="musical-notes-outline"></ion-icon>
+              </div>
+              <div class="soundwave" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <h4>Pianist &amp; Composer</h4>
+            <p>Exploring mystical harmonies across 88 keys. Classical discipline meets modern melodic expression.</p>
+          </div>
+
+          <!-- Photographer & Storyteller -->
+          <div class="bento-passion-card">
+            <div class="passion-header">
+              <div class="passion-icon photo-icon">
+                <ion-icon name="camera-outline"></ion-icon>
+              </div>
+              <span class="viewfinder-tag">
+                <span class="viewfinder-dot"></span>
+                <span>ISO 100 // 35mm</span>
+              </span>
+            </div>
+            <h4>Photographer &amp; Storyteller</h4>
+            <p>Capturing fleeting light and visual narratives across India. Specializing in landscape, architecture &amp; travel.</p>
+          </div>
+        </div>
+
+        <!-- Mission Status Strip -->
+        <div class="bento-status-strip">
+          <div class="strip-left">
+            <span class="strip-live-dot"></span>
+            <span class="strip-msg">Open for High-Impact Roles &amp; Technical Architecture</span>
+          </div>
+          <a href="#contact" class="strip-action">
+            <span>Get in touch</span>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </a>
+        </div>
+      </div>
     </div>
+
     <!-- Scroll indicator -->
     <div class="scroll-indicator">
       <div class="scroll-line"></div>
@@ -100,71 +225,10 @@
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section class="section" id="about">
-    <div class="section-inner">
-      <!-- Section divider -->
-      <div class="section-divider">
-        <span class="divider-dot"></span>
-        <span class="divider-line"></span>
-        <span class="divider-label">ABOUT</span>
-        <span class="divider-line"></span>
-        <span class="divider-dot"></span>
-      </div>
-
-      <h2 class="big-heading">I'm a Software <span class="highlight">Engineer</span>.</h2>
-      <p class="about-subtitle">Currently, I'm a Senior Software Engineer building scalable systems at enterprise level</p>
-
-      <div class="about-stats">
-        <div class="stat-card">
-          <span class="stat-num" data-count="7">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">Years Experience</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num" data-count="30">0</span><span class="stat-suffix">%</span>
-          <span class="stat-label">Efficiency Boost</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num" data-count="50">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">Projects Delivered</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num" data-count="20">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">Open Source Repos</span>
-        </div>
-      </div>
-
-      <p class="about-body">
-        A self-taught software craftsman with a passion for building elegant solutions
-        to complex problems. I specialize in system architecture, performance optimization,
-        and leading engineering teams. When I'm not coding, you'll find me behind a piano
-        or through a camera lens — always creating, always exploring.
-      </p>
-
-      <!-- Beyond Code — Passions -->
-      <div class="passions-row">
-        <div class="passion-card">
-          <div class="passion-icon"><ion-icon name="musical-notes-outline"></ion-icon></div>
-          <div>
-            <h4>Pianist & Composer</h4>
-            <p>Exploring mystical harmonies and weaving sonic spells across 88 keys. Blending classical technique with modern expression.</p>
-          </div>
-        </div>
-        <div class="passion-card">
-          <div class="passion-icon"><ion-icon name="camera-outline"></ion-icon></div>
-          <div>
-            <h4>Photographer & Storyteller</h4>
-            <p>Capturing fleeting moments through visual narratives. Specializing in landscape, travel, and architectural photography across India.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== WORK EXPERIENCE ===== -->
   <section class="section" id="work">
     <div class="section-inner">
-      <div class="section-divider">
+      <div class="section-divider" style="margin-bottom:20px">
         <span class="divider-dot"></span>
         <span class="divider-line"></span>
         <span class="divider-label">EXPERIENCE</span>
@@ -172,7 +236,7 @@
         <span class="divider-dot"></span>
       </div>
 
-      <h2 class="section-title">Work Experience</h2>
+      <h2 class="section-title" style="text-align:center;margin-bottom:30px">Work Experience</h2>
 
       <div class="timeline-container">
         <!-- Glowing central spine -->
@@ -184,7 +248,6 @@
           <div class="timeline-content">
             <span class="timeline-date">2021 — PRESENT</span>
             <h3>Senior Software Engineer</h3>
-            <h4 class="timeline-company">Tech Solutions Inc.</h4>
             <p>Architecting complex distributed systems processing millions of transactions. Leading a team of 8 engineers, mentoring junior developers, and driving 30% efficiency improvements through highly scalable microservice solutions.</p>
             <div class="exp-tags">
               <span>Python</span><span>AWS</span><span>System Architecture</span><span>K8s</span>
@@ -198,7 +261,6 @@
           <div class="timeline-content">
             <span class="timeline-date">2018 — 2021</span>
             <h3>Software Engineer</h3>
-            <h4 class="timeline-company">Global Dev Corp</h4>
             <p>Designed and built robust backend APIs resulting in 20% latency reduction. Built automated CI/CD pipelines, integrated security protocols, and relentlessly optimized Postgres queries for high-traffic financial applications.</p>
             <div class="exp-tags">
               <span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>Redis</span>
@@ -225,7 +287,6 @@
         <!-- Row 1: Languages & Scripting -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">01 // LANGUAGES</span>
             <span class="row-title">Languages &amp; Scripting</span>
           </div>
           <div class="tech-items">
@@ -255,7 +316,6 @@
         <!-- Row 2: Backend Development -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">02 // BACKEND</span>
             <span class="row-title">Backend Development</span>
           </div>
           <div class="tech-items">
@@ -281,7 +341,6 @@
         <!-- Row 3: CI/CD, Monitoring & Version Control -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">03 // CI/CD & OBS</span>
             <span class="row-title">CI/CD, Monitoring &amp; VCS</span>
           </div>
           <div class="tech-items">
@@ -315,7 +374,6 @@
         <!-- Row 4: Data Engineering -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">04 // DATA ENG</span>
             <span class="row-title">Data Engineering &amp; Processing</span>
           </div>
           <div class="tech-items">
@@ -341,7 +399,6 @@
         <!-- Row 5: Cloud & Infrastructure -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">05 // CLOUD</span>
             <span class="row-title">Cloud &amp; Infrastructure</span>
           </div>
           <div class="tech-items">
@@ -383,7 +440,6 @@
         <!-- Row 6: AI & LLM Engineering -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">06 // AI & LLM</span>
             <span class="row-title">AI &amp; LLM Engineering</span>
           </div>
           <div class="tech-items">
@@ -421,7 +477,6 @@
         <!-- Row 7: Databases & Caching -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">07 // DATABASES</span>
             <span class="row-title">Databases &amp; Caching</span>
           </div>
           <div class="tech-items">
@@ -447,7 +502,6 @@
         <!-- Row 8: Messaging & Distributed Systems -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">08 // MESSAGING</span>
             <span class="row-title">Messaging &amp; Distributed Systems</span>
           </div>
           <div class="tech-items">
@@ -469,7 +523,6 @@
         <!-- Row 9: Tools & Fundamentals -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">09 // TOOLS</span>
             <span class="row-title">Tools &amp; Fundamentals</span>
           </div>
           <div class="tech-items">
@@ -495,7 +548,6 @@
         <!-- Row 10: AI-Assisted Development -->
         <div class="tech-row">
           <div class="tech-row-label">
-            <span class="row-tag">10 // AI DEV</span>
             <span class="row-title">AI-Assisted Development</span>
           </div>
           <div class="tech-items">
@@ -642,22 +694,21 @@
           </iframe>
         </div>
       </div>
-
-      <!-- System status note -->
-      <div class="status-footer-note">
-        <span class="status-dot"></span>
-        <span>System Status: <strong>Online</strong> · Response Time: <strong>&lt;24h</strong></span>
-      </div>
     </div>
   </section>
 
   <footer class="footer">
-    <p>Designed & Built with <span class="highlight">❤️</span> by <span class="highlight">Kartik Dhiman</span> · 2026</p>
-    <p class="footer-sub">Powered by creativity, caffeine, and clean code ☕</p>
+    <p>Designed &amp; Built by <span class="highlight">Kartik Dhiman</span> · 2026</p>
+    <p class="footer-sub">Architected for resilience · Built with HTML, CSS &amp; JavaScript</p>
   </footer>
 
+  <!-- Floating Return to Command Center Pill -->
+  <a href="#hero" class="floating-back-top" id="backToTop" aria-label="Return to top">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </a>
+
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="./assets/js/script.js?v=3.1"></script>
+  <script src="./assets/js/script.js?v=3.8"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
