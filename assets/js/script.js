@@ -5,6 +5,10 @@
    Terminal text, stat counters, physics & scroll
    ================================================== */
 
+// Ensure clean dark theme
+try { localStorage.removeItem('theme'); } catch(e) {}
+document.documentElement.removeAttribute('data-theme');
+
 // ===== Hero Label Cycler =====
 (function labelCycler() {
   const labelEl = document.getElementById('heroLabel');
@@ -254,11 +258,11 @@ document.addEventListener('DOMContentLoaded', function () {
   particlesJS('particles-js', {
     particles: {
       number: { value: 40, density: { enable: true, value_area: 900 } },
-      color: { value: ['#7c3aed', '#06b6d4'] },
+      color: { value: ['#00d4ff', '#00ff88'] },
       shape: { type: 'circle' },
-      opacity: { value: 0.1, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.02 } },
+      opacity: { value: 0.08, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.02 } },
       size: { value: 2.5, random: true },
-      line_linked: { enable: true, distance: 150, color: '#7c3aed', opacity: 0.06, width: 1 },
+      line_linked: { enable: true, distance: 150, color: '#00d4ff', opacity: 0.05, width: 1 },
       move: { enable: true, speed: 0.4, direction: 'none', random: true, straight: false, out_mode: 'out' }
     },
     interactivity: {

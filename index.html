@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kartik Dhiman — Software Engineer</title>
   <meta name="description" content="Portfolio of Kartik Dhiman — Senior Software Engineer, Pianist, and Photographer.">
-  <link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css?v=5">
+  <link rel="shortcut icon" href="./assets/images/my-avatar.png?v=2" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css?v=8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,10 +21,34 @@
 
   <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
-    <div class="nav-logo">
-      <span class="logo-mark">K</span><span class="logo-rest">D</span>
-      <span class="logo-dot"></span>
-    </div>
+    <a href="#hero" class="nav-logo" aria-label="Kartik Dhiman">
+      <div class="logo-emblem">
+        <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cyber frame -->
+          <rect x="2.5" y="2.5" width="39" height="39" rx="11" class="logo-bg" />
+          <!-- Neon Corner Accents -->
+          <path d="M7 13V8C8 7 13 7 13 7" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M37 31V36C36 37 31 37 31 37" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- K Monogram -->
+          <path d="M14 13V31" stroke="var(--accent)" stroke-width="2.8" stroke-linecap="round" class="logo-k-stem"/>
+          <path d="M23 14L14.5 22L23.5 30" stroke="var(--accent)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" class="logo-k-arms"/>
+          <!-- D Monogram Intersecting -->
+          <path d="M22 13H26C30.4 13 33.5 16.5 33.5 22C33.5 27.5 30.4 31 26 31H22" stroke="var(--green)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" class="logo-d-curve"/>
+          <!-- Center glow core -->
+          <circle cx="22" cy="22" r="1.6" fill="var(--amber)" class="logo-core"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-code-bracket">&lt;</span>
+        <span class="logo-k-char">K</span>
+        <span class="logo-d-char">D</span>
+        <span class="logo-code-slash">/&gt;</span>
+      </div>
+      <span class="logo-status-chip">
+        <span class="logo-dot"></span>
+        <span class="logo-chip-text">v5.0</span>
+      </span>
+    </a>
     <nav class="nav-links" id="navLinks">
       <a href="#hero" class="nav-link active" data-target="hero">Home</a>
       <a href="#about" class="nav-link" data-target="about">About</a>
@@ -45,7 +69,7 @@
     <div class="hero-content">
       <div class="hero-avatar-col">
         <div class="hero-avatar-wrap">
-          <img src="./assets/images/my-avatar.png" alt="Kartik Dhiman" class="hero-avatar-img">
+          <img src="./assets/images/my-avatar.png?v=2" alt="Kartik Dhiman" class="hero-avatar-img">
           <div class="avatar-ring"></div>
           <div class="avatar-glow"></div>
           <!-- Scan line on avatar -->
@@ -633,7 +657,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="./assets/js/script.js?v=2.0"></script>
+  <script src="./assets/js/script.js?v=3.1"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
