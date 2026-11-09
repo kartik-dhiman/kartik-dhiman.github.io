@@ -6,333 +6,636 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kartik Dhiman — Software Engineer</title>
-  <meta name="description"
-    content="Personal portfolio of Kartik Dhiman — Senior Software Engineer, Pianist, and Photographer based in New Delhi.">
-
+  <meta name="description" content="Portfolio of Kartik Dhiman — Senior Software Engineer, Pianist, and Photographer.">
   <link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css">
-
+  <link rel="stylesheet" href="./assets/css/style.css?v=5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-  <!-- Particle Background -->
   <div id="particles-js"></div>
-
-  <!-- Scan-line overlay -->
+  <!-- Scanline overlay -->
   <div class="scanlines"></div>
 
-  <!-- =========== FLOATING NAV =========== -->
-  <nav class="dot-nav" id="dotNav">
-    <a href="#hero" class="dot-link active" data-label="Home"><span></span></a>
-    <a href="#about" class="dot-link" data-label="About"><span></span></a>
-    <a href="#resume" class="dot-link" data-label="Resume"><span></span></a>
-    <a href="#portfolio" class="dot-link" data-label="Portfolio"><span></span></a>
-    <a href="#contact" class="dot-link" data-label="Contact"><span></span></a>
-  </nav>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-mark">K</span><span class="logo-rest">D</span>
+      <span class="logo-dot"></span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero" class="nav-link active" data-target="hero">Home</a>
+      <a href="#about" class="nav-link" data-target="about">About</a>
+      <a href="#work" class="nav-link" data-target="work">Experience</a>
+      <a href="#projects" class="nav-link" data-target="projects">Projects</a>
+      <a href="#contact" class="nav-link" data-target="contact">Contact</a>
+    </nav>
+    <!-- Mobile hamburger -->
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-  <!-- =========== HERO =========== -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
-    <div class="hero-inner">
-      <div class="terminal-tag">&gt; initializing profile...</div>
-
-      <div class="hero-avatar">
-        <img src="./assets/images/my-avatar.png" alt="Kartik Dhiman" width="120">
+    <!-- Grid background for hero -->
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content">
+      <div class="hero-avatar-col">
+        <div class="hero-avatar-wrap">
+          <img src="./assets/images/my-avatar.png" alt="Kartik Dhiman" class="hero-avatar-img">
+          <div class="avatar-ring"></div>
+          <div class="avatar-glow"></div>
+          <!-- Scan line on avatar -->
+          <div class="avatar-scan"></div>
+        </div>
       </div>
-
-      <h1 class="hero-name">Kartik <span class="accent">Dhiman</span></h1>
-
-      <div class="hero-role-wrapper">
-        <span class="hero-role-prefix">~/role $</span>
-        <span class="hero-role" id="heroRole"></span>
-        <span class="caret">▌</span>
+      <div class="hero-text-col">
+        <p class="hero-greeting">Hello! I Am <span class="highlight">Kartik Dhiman</span></p>
+        <p class="hero-label" id="heroLabel">A Software Engineer who</p>
+        <h1 class="hero-headline" id="heroHeadline">Builds systems<br>that <span class="highlight-circle">scale</span>...</h1>
+        <p class="hero-sub" id="heroSub">Because if the architecture is right, everything else follows.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn-glow">Let's Connect <ion-icon name="arrow-forward-outline"></ion-icon></a>
+          <a href="#projects" class="btn-outline">View Work</a>
+        </div>
+        <!-- Terminal-style status -->
+        <div class="hero-terminal">
+          <span class="term-prompt">$</span>
+          <span class="term-text" id="terminalText"></span>
+          <span class="term-cursor">█</span>
+        </div>
       </div>
-
-      <p class="hero-tagline">Architect of Dreams · Master of Realities</p>
-
-      <div class="hero-links">
-        <a href="mailto:ikartikdhiman@gmail.com" class="hero-btn" target="_blank" rel="noopener noreferrer">
-          <ion-icon name="mail-outline"></ion-icon> Email
-        </a>
-        <a href="https://linkedin.com/in/kartik-dhiman" class="hero-btn" target="_blank" rel="noopener noreferrer">
-          <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
-        </a>
-        <a href="https://github.com/kartik-dhiman" class="hero-btn" target="_blank" rel="noopener noreferrer">
-          <ion-icon name="logo-github"></ion-icon> GitHub
-        </a>
-        <a href="https://instagram.com/sporadical_traveller" class="hero-btn" target="_blank"
-          rel="noopener noreferrer">
-          <ion-icon name="logo-instagram"></ion-icon> Social
-        </a>
-      </div>
-
-      <div class="scroll-hint">
-        <span>scroll</span>
-        <div class="scroll-arrow"></div>
-      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
     </div>
   </section>
 
-  <!-- =========== ABOUT =========== -->
+  <!-- ===== ABOUT ===== -->
   <section class="section" id="about">
     <div class="section-inner">
-      <h2 class="section-title"><span class="title-tag">&lt;/&gt;</span> About Me</h2>
+      <!-- Section divider -->
+      <div class="section-divider">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-label">ABOUT</span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
 
-      <div class="about-grid">
-        <div class="about-text-block">
-          <p class="about-lead">
-            Full-Time Software Engineer. Part-Time Pianist. Part-Time Photographer.
-          </p>
-          <p class="about-body">
-            Embarking on an odyssey across the tapestry of the cinematic universe,
-            I revel in the harmonies of highs, the nuances of mids, and the depths of lows.
-            I delight in transmuting complexity into designs that are not just solutions but poetry.
-          </p>
-          <blockquote class="about-quote">
-            "Sometimes You Gotta Run Before You Can Walk."
-            <cite>— Tony Stark 🚀</cite>
-          </blockquote>
+      <h2 class="big-heading">I'm a Software <span class="highlight">Engineer</span>.</h2>
+      <p class="about-subtitle">Currently, I'm a Senior Software Engineer building scalable systems at enterprise level</p>
+
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-num" data-count="7">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Experience</span>
         </div>
-
-        <div class="about-meta">
-          <div class="meta-item">
-            <span class="meta-label">Location</span>
-            <span class="meta-value">New Delhi, India</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Status</span>
-            <span class="meta-value status-online">Available</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Experience</span>
-            <span class="meta-value">7+ years</span>
-          </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="30">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Efficiency Boost</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="50">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="20">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Open Source Repos</span>
         </div>
       </div>
 
-      <!-- Services -->
-      <h3 class="sub-title">What I'm Doing</h3>
-      <div class="services-grid">
+      <p class="about-body">
+        A self-taught software craftsman with a passion for building elegant solutions
+        to complex problems. I specialize in system architecture, performance optimization,
+        and leading engineering teams. When I'm not coding, you'll find me behind a piano
+        or through a camera lens — always creating, always exploring.
+      </p>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="./assets/images/icon-design.svg" alt="design" width="36">
+      <!-- Beyond Code — Passions -->
+      <div class="passions-row">
+        <div class="passion-card">
+          <div class="passion-icon"><ion-icon name="musical-notes-outline"></ion-icon></div>
+          <div>
+            <h4>Pianist & Composer</h4>
+            <p>Exploring mystical harmonies and weaving sonic spells across 88 keys. Blending classical technique with modern expression.</p>
           </div>
-          <h4>Web Design</h4>
-          <p>Crafting modern, intuitive, and pixel-perfect user interfaces that captivate and engage.</p>
         </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="./assets/images/icon-dev.svg" alt="dev" width="36">
+        <div class="passion-card">
+          <div class="passion-icon"><ion-icon name="camera-outline"></ion-icon></div>
+          <div>
+            <h4>Photographer & Storyteller</h4>
+            <p>Capturing fleeting moments through visual narratives. Specializing in landscape, travel, and architectural photography across India.</p>
           </div>
-          <h4>Web Development</h4>
-          <p>Building robust, scalable, and high-performance web applications using cutting-edge technologies.</p>
         </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="./assets/images/icon-app.svg" alt="music" width="36">
-          </div>
-          <h4>Music</h4>
-          <p>Exploring the mystical harmonies and weaving sonic spells across the 88 keys.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <img src="./assets/images/icon-photo.svg" alt="photo" width="36">
-          </div>
-          <h4>Photography</h4>
-          <p>Capturing fleeting moments and telling compelling stories through the art of visual storytelling.</p>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- =========== RESUME =========== -->
-  <section class="section" id="resume">
+  <!-- ===== WORK EXPERIENCE ===== -->
+  <section class="section" id="work">
     <div class="section-inner">
-      <h2 class="section-title"><span class="title-tag">{...}</span> Resume</h2>
+      <div class="section-divider">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-label">EXPERIENCE</span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
 
-      <div class="resume-grid">
+      <h2 class="section-title">Work Experience</h2>
 
-        <!-- Education -->
-        <div class="resume-block">
-          <h3 class="resume-block-title">
-            <ion-icon name="school-outline"></ion-icon> Education
-          </h3>
-          <div class="timeline">
-            <div class="tl-item">
-              <span class="tl-date">2015 — 2018</span>
-              <h4 class="tl-title">Himachal Pradesh University</h4>
-              <p class="tl-desc">Master's of Computer Application</p>
+      <div class="timeline-container">
+        <!-- Glowing central spine -->
+        <div class="timeline-line"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot"><ion-icon name="rocket"></ion-icon></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2021 — PRESENT</span>
+            <h3>Senior Software Engineer</h3>
+            <h4 class="timeline-company">Tech Solutions Inc.</h4>
+            <p>Architecting complex distributed systems processing millions of transactions. Leading a team of 8 engineers, mentoring junior developers, and driving 30% efficiency improvements through highly scalable microservice solutions.</p>
+            <div class="exp-tags">
+              <span>Python</span><span>AWS</span><span>System Architecture</span><span>K8s</span>
             </div>
           </div>
         </div>
 
-        <!-- Experience -->
-        <div class="resume-block">
-          <h3 class="resume-block-title">
-            <ion-icon name="briefcase-outline"></ion-icon> Experience
-          </h3>
-          <div class="timeline">
-            <div class="tl-item">
-              <span class="tl-date">2021 — Present</span>
-              <h4 class="tl-title">Senior Software Engineer</h4>
-              <p class="tl-desc">
-                Leading complex system architectures, achieving significant performance gains, and mentoring
-                dynamic development teams. Innovating scalable solutions, implementing robust security measures,
-                and optimizing workflows — resulting in a 30% efficiency boost.
-              </p>
-            </div>
-            <div class="tl-item">
-              <span class="tl-date">2018 — 2021</span>
-              <h4 class="tl-title">Software Engineer</h4>
-              <p class="tl-desc">
-                Designed and implemented scalable system architectures resulting in a 20% boost in system performance.
-                Optimized workflows for seamless development processes. Resolved critical system issues and implemented
-                robust security measures for product integrity.
-              </p>
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot"><ion-icon name="hardware-chip"></ion-icon></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2018 — 2021</span>
+            <h3>Software Engineer</h3>
+            <h4 class="timeline-company">Global Dev Corp</h4>
+            <p>Designed and built robust backend APIs resulting in 20% latency reduction. Built automated CI/CD pipelines, integrated security protocols, and relentlessly optimized Postgres queries for high-traffic financial applications.</p>
+            <div class="exp-tags">
+              <span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>Redis</span>
             </div>
           </div>
         </div>
-
       </div>
-
-      <!-- Skills -->
-      <h3 class="sub-title" style="margin-top:50px;">Skills</h3>
-      <div class="skills-grid">
-        <div class="skill-bar">
-          <div class="skill-info"><span>System Architecture</span><span>80%</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--w:80%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-info"><span>Performance Optimization</span><span>70%</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--w:70%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-info"><span>Workflow Optimization</span><span>90%</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--w:90%"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-info"><span>Problem Solving</span><span>80%</span></div>
-          <div class="skill-track"><div class="skill-fill" style="--w:80%"></div></div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- =========== PORTFOLIO =========== -->
-  <section class="section" id="portfolio">
+  <!-- ===== TECH STACK ===== -->
+  <section class="section tech-section" id="tech">
     <div class="section-inner">
-      <h2 class="section-title"><span class="title-tag">[ ]</span> Portfolio</h2>
-
-      <div class="gallery-grid">
-        <a href="https://www.instagram.com/p/C48ItnWP0OJ/" target="_blank" rel="noopener noreferrer"
-          class="gallery-item">
-          <img src="./assets/images/portfolio/placeholder-1.png" alt="Instagram Post" loading="lazy">
-          <div class="gallery-overlay">
-            <ion-icon name="logo-instagram"></ion-icon>
-            <span>View on Instagram</span>
-          </div>
-        </a>
-        <a href="https://www.instagram.com/p/C43Ot16vFNK/" target="_blank" rel="noopener noreferrer"
-          class="gallery-item">
-          <img src="./assets/images/portfolio/placeholder-2.png" alt="Instagram Post" loading="lazy">
-          <div class="gallery-overlay">
-            <ion-icon name="logo-instagram"></ion-icon>
-            <span>View on Instagram</span>
-          </div>
-        </a>
-        <a href="https://www.instagram.com/p/C4oPs-SymM4/" target="_blank" rel="noopener noreferrer"
-          class="gallery-item">
-          <img src="./assets/images/portfolio/placeholder-3.png" alt="Instagram Post" loading="lazy">
-          <div class="gallery-overlay">
-            <ion-icon name="logo-instagram"></ion-icon>
-            <span>View on Instagram</span>
-          </div>
-        </a>
-        <a href="https://www.instagram.com/p/C4nIfe3Pw7d/" target="_blank" rel="noopener noreferrer"
-          class="gallery-item">
-          <img src="./assets/images/portfolio/placeholder-4.png" alt="Instagram Post" loading="lazy">
-          <div class="gallery-overlay">
-            <ion-icon name="logo-instagram"></ion-icon>
-            <span>View on Instagram</span>
-          </div>
-        </a>
-        <a href="https://www.instagram.com/p/C1IM9UEyGo8/" target="_blank" rel="noopener noreferrer"
-          class="gallery-item">
-          <img src="./assets/images/portfolio/placeholder-5.png" alt="Instagram Post" loading="lazy">
-          <div class="gallery-overlay">
-            <ion-icon name="logo-instagram"></ion-icon>
-            <span>View on Instagram</span>
-          </div>
-        </a>
-        <a href="https://www.instagram.com/p/CfB0ZaUP3f-/" target="_blank" rel="noopener noreferrer"
-          class="gallery-item">
-          <img src="./assets/images/portfolio/placeholder-6.png" alt="Instagram Post" loading="lazy">
-          <div class="gallery-overlay">
-            <ion-icon name="logo-instagram"></ion-icon>
-            <span>View on Instagram</span>
-          </div>
-        </a>
+      <div class="section-divider" style="margin-bottom:20px">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-label">TECH STACK</span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
       </div>
+      <p class="tech-text" style="margin-bottom:36px">Technologies I work with on a daily basis</p>
 
-      <div class="center-cta">
-        <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer"
-          class="btn-primary">
-          <ion-icon name="logo-instagram"></ion-icon> Follow for More
-        </a>
+      <div class="tech-showcase">
+        <!-- Row 1: Languages & Scripting -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">01 // LANGUAGES</span>
+            <span class="row-title">Languages &amp; Scripting</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#3776AB">
+              <span class="tech-icon"><ion-icon name="logo-python"></ion-icon></span>
+              <span class="tech-label">Python</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F7DF1E">
+              <span class="tech-icon"><ion-icon name="logo-javascript"></ion-icon></span>
+              <span class="tech-label">JavaScript</span>
+            </div>
+            <div class="tech-pill" style="--clr:#336791">
+              <span class="tech-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <span class="tech-label">SQL</span>
+            </div>
+            <div class="tech-pill" style="--clr:#89E051">
+              <span class="tech-icon"><ion-icon name="terminal-outline"></ion-icon></span>
+              <span class="tech-label">Bash</span>
+            </div>
+            <div class="tech-pill" style="--clr:#C5A5C5">
+              <span class="tech-icon"><ion-icon name="code-working-outline"></ion-icon></span>
+              <span class="tech-label">Zsh</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Backend Development -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">02 // BACKEND</span>
+            <span class="row-title">Backend Development</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#44B78B">
+              <span class="tech-icon"><ion-icon name="leaf-outline"></ion-icon></span>
+              <span class="tech-label">Django</span>
+            </div>
+            <div class="tech-pill" style="--clr:#E10098">
+              <span class="tech-icon"><ion-icon name="git-network-outline"></ion-icon></span>
+              <span class="tech-label">GraphQL</span>
+            </div>
+            <div class="tech-pill" style="--clr:#43B02A">
+              <span class="tech-icon"><ion-icon name="bug-outline"></ion-icon></span>
+              <span class="tech-label">Selenium</span>
+            </div>
+            <div class="tech-pill" style="--clr:#7952B3">
+              <span class="tech-icon"><ion-icon name="grid-outline"></ion-icon></span>
+              <span class="tech-label">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: CI/CD, Monitoring & Version Control -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">03 // CI/CD & OBS</span>
+            <span class="row-title">CI/CD, Monitoring &amp; VCS</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#D33833">
+              <span class="tech-icon"><ion-icon name="sync-outline"></ion-icon></span>
+              <span class="tech-label">Jenkins</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F05032">
+              <span class="tech-icon"><ion-icon name="logo-github"></ion-icon></span>
+              <span class="tech-label">Git</span>
+            </div>
+            <div class="tech-pill" style="--clr:#0052CC">
+              <span class="tech-icon"><ion-icon name="git-branch-outline"></ion-icon></span>
+              <span class="tech-label">Bitbucket</span>
+            </div>
+            <div class="tech-pill" style="--clr:#1CE783">
+              <span class="tech-icon"><ion-icon name="pulse-outline"></ion-icon></span>
+              <span class="tech-label">New Relic</span>
+            </div>
+            <div class="tech-pill" style="--clr:#362D59">
+              <span class="tech-icon"><ion-icon name="warning-outline"></ion-icon></span>
+              <span class="tech-label">Sentry</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F46800">
+              <span class="tech-icon"><ion-icon name="bar-chart-outline"></ion-icon></span>
+              <span class="tech-label">Grafana</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 4: Data Engineering -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">04 // DATA ENG</span>
+            <span class="row-title">Data Engineering &amp; Processing</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#017CEE">
+              <span class="tech-icon"><ion-icon name="git-merge-outline"></ion-icon></span>
+              <span class="tech-label">Apache Airflow</span>
+            </div>
+            <div class="tech-pill" style="--clr:#29B5E8">
+              <span class="tech-icon"><ion-icon name="snow-outline"></ion-icon></span>
+              <span class="tech-label">Snowflake</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF694A">
+              <span class="tech-icon"><ion-icon name="construct-outline"></ion-icon></span>
+              <span class="tech-label">dbt</span>
+            </div>
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+              <span class="tech-label">ETL Pipelines</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 5: Cloud & Infrastructure -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">05 // CLOUD</span>
+            <span class="row-title">Cloud &amp; Infrastructure</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="logo-amazon"></ion-icon></span>
+              <span class="tech-label">AWS EC2</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="cube-outline"></ion-icon></span>
+              <span class="tech-label">AWS ECS</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="archive-outline"></ion-icon></span>
+              <span class="tech-label">AWS S3</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <span class="tech-label">AWS RDS</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="pulse-outline"></ion-icon></span>
+              <span class="tech-label">AWS CloudWatch</span>
+            </div>
+            <div class="tech-pill" style="--clr:#2496ED">
+              <span class="tech-icon"><ion-icon name="logo-docker"></ion-icon></span>
+              <span class="tech-label">Docker</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FCC624">
+              <span class="tech-icon"><ion-icon name="terminal-outline"></ion-icon></span>
+              <span class="tech-label">Linux</span>
+            </div>
+            <div class="tech-pill" style="--clr:#D4D4D4">
+              <span class="tech-icon"><ion-icon name="terminal-outline"></ion-icon></span>
+              <span class="tech-label">Unix</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 6: AI & LLM Engineering -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">06 // AI & LLM</span>
+            <span class="row-title">AI &amp; LLM Engineering</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="search-outline"></ion-icon></span>
+              <span class="tech-label">RAG</span>
+            </div>
+            <div class="tech-pill" style="--clr:#C084FC">
+              <span class="tech-icon"><ion-icon name="hardware-chip-outline"></ion-icon></span>
+              <span class="tech-label">LLMs</span>
+            </div>
+            <div class="tech-pill" style="--clr:#818CF8">
+              <span class="tech-icon"><ion-icon name="cellular-outline"></ion-icon></span>
+              <span class="tech-label">Embeddings</span>
+            </div>
+            <div class="tech-pill" style="--clr:#60A5FA">
+              <span class="tech-icon"><ion-icon name="scan-outline"></ion-icon></span>
+              <span class="tech-label">OCR</span>
+            </div>
+            <div class="tech-pill" style="--clr:#22D3EE">
+              <span class="tech-icon"><ion-icon name="link-outline"></ion-icon></span>
+              <span class="tech-label">LangChain</span>
+            </div>
+            <div class="tech-pill" style="--clr:#34D399">
+              <span class="tech-icon"><ion-icon name="git-merge-outline"></ion-icon></span>
+              <span class="tech-label">LangGraph</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F472B6">
+              <span class="tech-icon"><ion-icon name="extension-puzzle-outline"></ion-icon></span>
+              <span class="tech-label">MCP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 7: Databases & Caching -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">07 // DATABASES</span>
+            <span class="row-title">Databases &amp; Caching</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#4479A1">
+              <span class="tech-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <span class="tech-label">MySQL</span>
+            </div>
+            <div class="tech-pill" style="--clr:#336791">
+              <span class="tech-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <span class="tech-label">PostgreSQL</span>
+            </div>
+            <div class="tech-pill" style="--clr:#47A248">
+              <span class="tech-icon"><ion-icon name="leaf-outline"></ion-icon></span>
+              <span class="tech-label">MongoDB</span>
+            </div>
+            <div class="tech-pill" style="--clr:#DC382D">
+              <span class="tech-icon"><ion-icon name="flash-outline"></ion-icon></span>
+              <span class="tech-label">Redis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 8: Messaging & Distributed Systems -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">08 // MESSAGING</span>
+            <span class="row-title">Messaging &amp; Distributed Systems</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#B07FFD">
+              <span class="tech-icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+              <span class="tech-label">Apache Kafka</span>
+            </div>
+            <div class="tech-pill" style="--clr:#37B24D">
+              <span class="tech-icon"><ion-icon name="flower-outline"></ion-icon></span>
+              <span class="tech-label">Celery</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF6600">
+              <span class="tech-icon"><ion-icon name="mail-outline"></ion-icon></span>
+              <span class="tech-label">RabbitMQ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 9: Tools & Fundamentals -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">09 // TOOLS</span>
+            <span class="row-title">Tools &amp; Fundamentals</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#0052CC">
+              <span class="tech-icon"><ion-icon name="apps-outline"></ion-icon></span>
+              <span class="tech-label">Jira</span>
+            </div>
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="git-branch-outline"></ion-icon></span>
+              <span class="tech-label">Data Structures</span>
+            </div>
+            <div class="tech-pill" style="--clr:#89E051">
+              <span class="tech-icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+              <span class="tech-label">SSH</span>
+            </div>
+            <div class="tech-pill" style="--clr:#C5A5C5">
+              <span class="tech-icon"><ion-icon name="code-slash-outline"></ion-icon></span>
+              <span class="tech-label">Shell Scripting</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 10: AI-Assisted Development -->
+        <div class="tech-row">
+          <div class="tech-row-label">
+            <span class="row-tag">10 // AI DEV</span>
+            <span class="row-title">AI-Assisted Development</span>
+          </div>
+          <div class="tech-items">
+            <div class="tech-pill" style="--clr:#00B4D8">
+              <span class="tech-icon"><ion-icon name="sparkles-outline"></ion-icon></span>
+              <span class="tech-label">Kiro</span>
+            </div>
+            <div class="tech-pill" style="--clr:#D4A27F">
+              <span class="tech-icon"><ion-icon name="hardware-chip-outline"></ion-icon></span>
+              <span class="tech-label">Claude Code</span>
+            </div>
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="checkmark-done-outline"></ion-icon></span>
+              <span class="tech-label">AI-Assisted Testing</span>
+            </div>
+            <div class="tech-pill" style="--clr:#34D399">
+              <span class="tech-icon"><ion-icon name="document-text-outline"></ion-icon></span>
+              <span class="tech-label">Spec-Driven Dev</span>
+            </div>
+          </div>
+        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- =========== CONTACT =========== -->
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="section-divider">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-label">PROJECTS</span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
+
+      <!-- Photography Project — uses portfolio images -->
+      <div class="project-row">
+        <div class="project-text">
+          <p class="project-label">Featured Project</p>
+          <h3 class="project-name">Photography Portfolio</h3>
+          <p class="project-desc">A curated visual collection capturing fleeting moments through the art of storytelling. From the misty mountains of Himachal to the bustling streets of Delhi — each frame tells a story of India's beauty.</p>
+          <div class="project-links">
+            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" class="proj-link"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" class="proj-link"><ion-icon name="open-outline"></ion-icon></a>
+          </div>
+        </div>
+        <div class="project-preview">
+          <div class="preview-grid">
+            <img src="./assets/images/portfolio/placeholder-1.png" alt="Photography" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-2.png" alt="Photography" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-3.png" alt="Photography" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-4.png" alt="Photography" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- More Photography -->
+      <div class="project-row reverse">
+        <div class="project-text">
+          <p class="project-label">Visual Stories</p>
+          <h3 class="project-name">Travel &amp; Architecture</h3>
+          <p class="project-desc">Exploring the intersection of light, shadow, and structure. From ancient temples to modern cities — capturing the soul of every place through architectural and travel photography.</p>
+          <div class="project-links">
+            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" class="proj-link"><ion-icon name="logo-instagram"></ion-icon></a>
+          </div>
+        </div>
+        <div class="project-preview">
+          <div class="preview-grid preview-grid-2">
+            <img src="./assets/images/portfolio/placeholder-5.png" alt="Photography" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-6.png" alt="Photography" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Dev Project — NO portfolio images, uses terminal/code style -->
+      <div class="project-row">
+        <div class="project-text">
+          <p class="project-label">Open Source</p>
+          <h3 class="project-name">Dev Contributions</h3>
+          <p class="project-desc">Active contributor to open-source ecosystem. Building developer tools, documentation frameworks, and scalable system design patterns that help teams ship faster.</p>
+          <div class="project-links">
+            <a href="https://github.com/kartik-dhiman" target="_blank" rel="noopener noreferrer" class="proj-link"><ion-icon name="logo-github"></ion-icon></a>
+          </div>
+        </div>
+        <div class="project-preview">
+          <!-- Terminal-style code preview instead of photos -->
+          <div class="code-preview">
+            <div class="code-header">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-title">~/projects/kartik-dhiman</span>
+            </div>
+            <pre class="code-body"><code><span class="code-comment">// System Architecture Design</span>
+<span class="code-kw">class</span> <span class="code-fn">DistributedEngine</span> {
+  <span class="code-kw">constructor</span>(config) {
+    <span class="code-kw">this</span>.nodes = config.replicas;
+    <span class="code-kw">this</span>.strategy = <span class="code-str">'consistent-hash'</span>;
+  }
+
+  <span class="code-kw">async</span> <span class="code-fn">process</span>(request) {
+    <span class="code-kw">const</span> node = <span class="code-kw">this</span>.route(request);
+    <span class="code-kw">return await</span> node.execute(request);
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
   <section class="section" id="contact">
-    <div class="section-inner">
-      <h2 class="section-title"><span class="title-tag">&gt;_</span> Contact</h2>
-
-      <div class="contact-grid">
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.54004400082!2d77.06889994830484!3d28.52728034466949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1693156097424!5m2!1sen!2sin"
-            width="100%" height="100%" loading="lazy" title="Map"></iframe>
-        </div>
-
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <input type="text" name="fullname" placeholder="Your Name" required class="form-field">
-            <input type="email" name="email" placeholder="Email Address" required class="form-field">
-          </div>
-          <textarea name="message" placeholder="Your Message" required class="form-field form-textarea"></textarea>
-          <button type="submit" class="btn-primary btn-submit" disabled id="formBtn">
-            <ion-icon name="paper-plane"></ion-icon> Send Message
-          </button>
-        </form>
+    <div class="section-inner contact-inner">
+      <div class="section-divider">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-label">CONTACT</span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
       </div>
 
+      <h2 class="section-title">Let's Build Together</h2>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-desc">
+            I'm always interested in new challenges — whether it's architecting a scalable backend,
+            leading a team, or collaborating on open-source. Have a project in mind? Let's talk.
+          </p>
+          <div class="contact-socials">
+            <a href="https://linkedin.com/in/kartik-dhiman" target="_blank" rel="noopener noreferrer" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="https://github.com/kartik-dhiman" target="_blank" rel="noopener noreferrer" title="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="mailto:ikartikdhiman@gmail.com" title="Email"><ion-icon name="mail-outline"></ion-icon></a>
+          </div>
+        </div>
+
+        <div class="contact-map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.54004400082!2d77.06889994830484!3d28.52728034466949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1693156097424!5m2!1sen!2sin" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location Map">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- System status note -->
+      <div class="status-footer-note">
+        <span class="status-dot"></span>
+        <span>System Status: <strong>Online</strong> · Response Time: <strong>&lt;24h</strong></span>
+      </div>
     </div>
   </section>
 
-  <!-- =========== FOOTER =========== -->
-  <footer class="site-footer">
-    <p>&copy; 2026 Kartik Dhiman &middot; Built with ☕ and code</p>
+  <footer class="footer">
+    <p>Designed & Built with <span class="highlight">❤️</span> by <span class="highlight">Kartik Dhiman</span> · 2026</p>
+    <p class="footer-sub">Powered by creativity, caffeine, and clean code ☕</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js?v=2.0"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>
