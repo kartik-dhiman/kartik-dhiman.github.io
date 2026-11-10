@@ -302,28 +302,230 @@ document.querySelectorAll('.dock-btn, .dock-nav-item, .dock-action-btn, .dock-br
   });
 })();
 
-// ===== Particles =====
-document.addEventListener('DOMContentLoaded', function () {
-  if (typeof particlesJS === 'undefined') return;
+// ===== Ambient Light Background Particles =====
+(function initAmbientParticles() {
+  function setupParticlesJS() {
+    if (typeof particlesJS !== 'undefined') {
+      try {
+        particlesJS('particles-js', {
+          particles: {
+            number: {
+              value: 58,
+              density: { enable: true, value_area: 850 }
+            },
+            color: {
+              value: ['#00d4ff', '#00ff88', '#38bdf8']
+            },
+            shape: { type: 'circle' },
+            opacity: {
+              value: 0.32,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 0.8,
+                opacity_min: 0.12,
+                sync: false
+              }
+            },
+            size: {
+              value: 2.6,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 1.4,
+                size_min: 1.2,
+                sync: false
+              }
+            },
+            line_linked: {
+              enable: true,
+              distance: 140,
+              color: '#00d4ff',
+              opacity: 0.14,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 0.65,
+              direction: 'none',
+              random: true,
+              straight: false,
+              out_mode: 'out',
+              bounce: false
+            }
+          },
+          interactivity: {
+            detect_on: 'window',
+            events: {
+              onhover: { enable: true, mode: 'grab' },
+              onclick: { enable: true, mode: 'push' },
+              resize: true
+            },
+            modes: {
+              grab: {
+                distance: 150,
+                line_linked: { opacity: 0.32 }
+              },
+              push: { particles_nb: 3 }
+            }
+          },
+          retina_detect: true
+        });
+        return true;
+      } catch (err) {
+        console.warn('particlesJS init failed, falling back to native canvas:', err);
+      }
+    }
+    return false;
+  }
 
-  particlesJS('particles-js', {
-    particles: {
-      number: { value: 40, density: { enable: true, value_area: 900 } },
-      color: { value: ['#00d4ff', '#00ff88'] },
-      shape: { type: 'circle' },
-      opacity: { value: 0.08, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.02 } },
-      size: { value: 2.5, random: true },
-      line_linked: { enable: true, distance: 150, color: '#00d4ff', opacity: 0.05, width: 1 },
-      move: { enable: true, speed: 0.4, direction: 'none', random: true, straight: false, out_mode: 'out' }
-    },
-    interactivity: {
-      detect_on: 'canvas',
-      events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true },
-      modes: { grab: { distance: 140, line_linked: { opacity: 0.15 } }, push: { particles_nb: 2 } }
-    },
-    retina_detect: true
-  });
-});
+  function startNativeCanvas() {
+    const container = document.getElementById('particles-js');
+    if (!container) return;
+    if (container.querySelector('canvas')) return; // already active
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'native-particle-canvas';
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    container.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = 0;
+    let height = 0;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    const colors = ['#00d4ff', '#00ff88', '#38bdf8'];
+    const count = Math.min(65, Math.max(35, Math.floor((width * height) / 22000)));
+    const particles = [];
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        radius: Math.random() * 1.6 + 1.2,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        alpha: Math.random() * 0.25 + 0.15,
+        alphaSpeed: (Math.random() * 0.006 + 0.003) * (Math.random() < 0.5 ? 1 : -1)
+      });
+    }
+
+    const mouse = { x: null, y: null };
+    window.addEventListener('mousemove', function (e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    }, { passive: true });
+    window.addEventListener('mouseleave', function () {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    let running = true;
+    document.addEventListener('visibilitychange', function () {
+      running = !document.hidden;
+      if (running) requestAnimationFrame(loop);
+    });
+
+    function loop() {
+      if (!running) return;
+      ctx.clearRect(0, 0, width, height);
+
+      // Particle physics & rendering
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < -10) p.x = width + 10;
+        else if (p.x > width + 10) p.x = -10;
+        if (p.y < -10) p.y = height + 10;
+        else if (p.y > height + 10) p.y = -10;
+
+        p.alpha += p.alphaSpeed;
+        if (p.alpha > 0.42) { p.alpha = 0.42; p.alphaSpeed = -p.alphaSpeed; }
+        else if (p.alpha < 0.14) { p.alpha = 0.14; p.alphaSpeed = -p.alphaSpeed; }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = p.color;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Interaction with mouse cursor
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - p.x;
+          const dy = mouse.y - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = '#00d4ff';
+            ctx.globalAlpha = (1 - dist / 150) * 0.32;
+            ctx.lineWidth = 0.9;
+            ctx.stroke();
+          }
+        }
+
+        // Ambient constellation lines between nearby particles
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 135) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = '#00d4ff';
+            ctx.globalAlpha = (1 - dist / 135) * 0.14;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  }
+
+  function init() {
+    if (!setupParticlesJS()) {
+      startNativeCanvas();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 
 // ===== Interactive Natural Perching & Peeking Cat Easter Egg =====
 (function siteCat() {
