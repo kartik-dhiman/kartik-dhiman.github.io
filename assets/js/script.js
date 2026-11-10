@@ -215,7 +215,7 @@ document.documentElement.removeAttribute('data-theme');
 // ===== Reveal on Scroll =====
 (function reveal() {
   const els = document.querySelectorAll(
-    '.timeline-item, .tech-showcase, .project-row, .contact-inner, .code-preview'
+    '.timeline-item, .tech-bento-grid, .project-row, .contact-inner, .code-preview, .work-competencies-card'
   );
   els.forEach(el => el.classList.add('reveal'));
 
@@ -229,6 +229,23 @@ document.documentElement.removeAttribute('data-theme');
   }, { threshold: 0.1 });
 
   els.forEach(el => observer.observe(el));
+})();
+
+// ===== Work Experience Competency Bar Animation =====
+(function compBars() {
+  const card = document.querySelector('.work-competencies-card');
+  if (!card) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        card.classList.add('is-animated');
+        observer.unobserve(card);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  observer.observe(card);
 })();
 
 // ===== Smooth Scroll for Navigation & Action Links =====
@@ -251,6 +268,38 @@ document.querySelectorAll('.dock-btn, .dock-nav-item, .dock-action-btn, .dock-br
   window.addEventListener('scroll', () => {
     btn.classList.toggle('show', window.scrollY > 350);
   }, { passive: true });
+})();
+
+// ===== Tech Stack Category Filter Hub =====
+(function techFilter() {
+  const filterBtns = document.querySelectorAll('.tech-filter-btn');
+  const pods = document.querySelectorAll('.tech-pod');
+  if (!filterBtns.length || !pods.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const targetFilter = btn.getAttribute('data-filter');
+
+      pods.forEach(pod => {
+        const podCat = pod.getAttribute('data-category');
+        if (targetFilter === 'all' || podCat === targetFilter) {
+          pod.classList.remove('is-hidden');
+          pod.style.opacity = '0';
+          pod.style.transform = 'translateY(12px)';
+          setTimeout(() => {
+            pod.style.transition = 'opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+            pod.style.opacity = '1';
+            pod.style.transform = 'translateY(0)';
+          }, 20);
+        } else {
+          pod.classList.add('is-hidden');
+        }
+      });
+    });
+  });
 })();
 
 // ===== Particles =====

@@ -8,7 +8,7 @@
   <title>Kartik Dhiman — Software Engineer</title>
   <meta name="description" content="Portfolio of Kartik Dhiman — Senior Software Engineer, Pianist, and Photographer.">
   <link rel="shortcut icon" href="./assets/images/my-avatar.png?v=2" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css?v=25">
+  <link rel="stylesheet" href="./assets/css/style.css?v=29">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,9 +24,12 @@
     <div class="dock-glow-aura"></div>
     <div class="dock-light-runner"></div>
     <div class="dock-container">
-      <a href="#hero" class="dock-brand" aria-label="Return to Command Center">
-        <span class="dock-brand-text">&lt;<span class="cyan">K</span><span class="green">D</span>/&gt;</span>
-        <span class="dock-live-pulse"></span>
+      <a href="#hero" class="dock-brand" aria-label="Return to Command Center" title="Kartik Dhiman — Command Center">
+        <div class="dock-avatar-capsule">
+          <div class="dock-avatar-halo"></div>
+          <img src="./assets/images/my-avatar.png?v=2" alt="KD" class="dock-avatar-img">
+          <span class="dock-live-pulse"></span>
+        </div>
       </a>
       <div class="dock-divider"></div>
       <div class="dock-links">
@@ -42,9 +45,9 @@
           <ion-icon name="layers-outline"></ion-icon>
           <span>Tech Stack</span>
         </a>
-        <a href="#projects" class="dock-nav-item" data-nav="projects">
-          <ion-icon name="code-slash-outline"></ion-icon>
-          <span>Projects</span>
+        <a href="#showcase" class="dock-nav-item" data-nav="showcase">
+          <ion-icon name="sparkles-outline"></ion-icon>
+          <span>Showcase</span>
         </a>
       </div>
       <a href="#contact" class="dock-action-btn">
@@ -100,9 +103,9 @@
             <ion-icon name="layers-outline"></ion-icon>
             <span>Tech Stack</span>
           </a>
-          <a href="#projects" class="dock-btn">
-            <ion-icon name="code-slash-outline"></ion-icon>
-            <span>Projects</span>
+          <a href="#showcase" class="dock-btn">
+            <ion-icon name="sparkles-outline"></ion-icon>
+            <span>Showcase</span>
           </a>
         </nav>
 
@@ -130,7 +133,7 @@
           <div class="bento-stat-card">
             <div class="stat-top">
               <div class="stat-val-group">
-                <span class="stat-num" data-count="7">0</span><span class="stat-suffix">+</span>
+                <span class="stat-num" data-count="8">0</span><span class="stat-suffix">+</span>
               </div>
               <span class="stat-icon-pill"><ion-icon name="time-outline"></ion-icon></span>
             </div>
@@ -141,7 +144,7 @@
           <div class="bento-stat-card">
             <div class="stat-top">
               <div class="stat-val-group">
-                <span class="stat-num" data-count="30">0</span><span class="stat-suffix">%</span>
+                <span class="stat-num" data-count="70">0</span><span class="stat-suffix">%</span>
               </div>
               <span class="stat-icon-pill"><ion-icon name="flash-outline"></ion-icon></span>
             </div>
@@ -246,9 +249,9 @@
         <div class="timeline-item left reveal">
           <div class="timeline-dot"><ion-icon name="rocket"></ion-icon></div>
           <div class="timeline-content">
-            <span class="timeline-date">2021 — PRESENT</span>
+            <span class="timeline-date">2023 — PRESENT</span>
             <h3>Senior Software Engineer</h3>
-            <p>Architecting complex distributed systems processing millions of transactions. Leading a team of 8 engineers, mentoring junior developers, and driving 30% efficiency improvements through highly scalable microservice solutions.</p>
+            <p>Architecting complex distributed systems processing millions of transactions. Leading a team of 8 engineers, mentoring junior developers, and driving 70% efficiency improvements through highly scalable microservice solutions.</p>
             <div class="exp-tags">
               <span>Python</span><span>AWS</span><span>System Architecture</span><span>K8s</span>
             </div>
@@ -259,11 +262,76 @@
         <div class="timeline-item right reveal">
           <div class="timeline-dot"><ion-icon name="hardware-chip"></ion-icon></div>
           <div class="timeline-content">
-            <span class="timeline-date">2018 — 2021</span>
+            <span class="timeline-date">2018 — 2022</span>
             <h3>Software Engineer</h3>
             <p>Designed and built robust backend APIs resulting in 20% latency reduction. Built automated CI/CD pipelines, integrated security protocols, and relentlessly optimized Postgres queries for high-traffic financial applications.</p>
             <div class="exp-tags">
               <span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>Redis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Engineering Competencies & Proficiency Distribution -->
+      <div class="work-competencies-card reveal">
+        <div class="comp-card-header">
+          <div class="comp-header-left">
+            <span class="comp-badge"><ion-icon name="analytics-outline"></ion-icon> CORE PROFICIENCIES</span>
+            <h3 class="comp-heading">Engineering Impact &amp; Competency Distribution</h3>
+            <p class="comp-subtext">Quantified operational mastery across distributed system design, throughput tuning &amp; reliability</p>
+          </div>
+          <div class="comp-header-stat">
+            <span class="comp-stat-val">8+</span>
+            <span class="comp-stat-lbl">Years Experience</span>
+          </div>
+        </div>
+
+        <div class="comp-bars-grid">
+          <div class="comp-bar-item" data-pct="80">
+            <div class="comp-bar-meta">
+              <span class="comp-bar-title"><ion-icon name="git-network-outline"></ion-icon> System Architecture Design</span>
+              <span class="comp-bar-score">80%</span>
+            </div>
+            <div class="comp-progress-track">
+              <div class="comp-progress-fill" style="--comp-fill: 80%; --fill-grad: linear-gradient(90deg, #00d4ff, #00ff88); --glow-clr: rgba(0, 212, 255, 0.4);">
+                <span class="comp-fill-glow"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp-bar-item" data-pct="90">
+            <div class="comp-bar-meta">
+              <span class="comp-bar-title"><ion-icon name="git-commit-outline"></ion-icon> Workflow Optimization</span>
+              <span class="comp-bar-score">90%</span>
+            </div>
+            <div class="comp-progress-track">
+              <div class="comp-progress-fill" style="--comp-fill: 90%; --fill-grad: linear-gradient(90deg, #00ff88, #64ffda); --glow-clr: rgba(0, 255, 136, 0.4);">
+                <span class="comp-fill-glow"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp-bar-item" data-pct="80">
+            <div class="comp-bar-meta">
+              <span class="comp-bar-title"><ion-icon name="shield-checkmark-outline"></ion-icon> Problem Solving And Issue Resolution</span>
+              <span class="comp-bar-score">80%</span>
+            </div>
+            <div class="comp-progress-track">
+              <div class="comp-progress-fill" style="--comp-fill: 80%; --fill-grad: linear-gradient(90deg, #a78bfa, #00d4ff); --glow-clr: rgba(167, 139, 250, 0.4);">
+                <span class="comp-fill-glow"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp-bar-item" data-pct="70">
+            <div class="comp-bar-meta">
+              <span class="comp-bar-title"><ion-icon name="speedometer-outline"></ion-icon> Performance Optimization</span>
+              <span class="comp-bar-score">70%</span>
+            </div>
+            <div class="comp-progress-track">
+              <div class="comp-progress-fill" style="--comp-fill: 70%; --fill-grad: linear-gradient(90deg, #ff9900, #ffd166); --glow-clr: rgba(255, 153, 0, 0.4);">
+                <span class="comp-fill-glow"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -281,15 +349,46 @@
         <span class="divider-line"></span>
         <span class="divider-dot"></span>
       </div>
-      <p class="tech-text" style="margin-bottom:36px">Technologies I work with on a daily basis</p>
+      <h2 class="section-title" style="text-align:center;margin-bottom:12px">Architecture &amp; Technologies</h2>
+      <p class="tech-text" style="text-align:center;margin-bottom:32px">Production-grade distributed systems, cloud infrastructure &amp; AI tooling</p>
 
-      <div class="tech-showcase">
-        <!-- Row 1: Languages & Scripting -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">Languages &amp; Scripting</span>
+      <!-- Interactive Domain Filter Hub -->
+      <div class="tech-filter-bar">
+        <button class="tech-filter-btn active" data-filter="all">
+          <span class="filter-dot"></span>
+          <span>All Domains</span>
+          <span class="filter-count">10</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="backend">
+          <span>Backend &amp; Core</span>
+          <span class="filter-count">4</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="ai">
+          <span>AI &amp; LLMs</span>
+          <span class="filter-count">2</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="cloud">
+          <span>Cloud &amp; DevOps</span>
+          <span class="filter-count">2</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="data">
+          <span>Data &amp; Pipelines</span>
+          <span class="filter-count">2</span>
+        </button>
+      </div>
+
+      <!-- Bento Grid of 10 Tech Domain Pods -->
+      <div class="tech-bento-grid">
+        <!-- Pod 1: Languages & Scripting -->
+        <div class="tech-pod" data-category="backend">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="terminal-outline"></ion-icon></span>
+              <h3 class="pod-title">Languages &amp; Scripting</h3>
+            </div>
+            <span class="pod-badge">5 tools</span>
           </div>
-          <div class="tech-items">
+          <div class="pod-items">
             <div class="tech-pill" style="--clr:#3776AB">
               <span class="tech-icon"><ion-icon name="logo-python"></ion-icon></span>
               <span class="tech-label">Python</span>
@@ -313,12 +412,16 @@
           </div>
         </div>
 
-        <!-- Row 2: Backend Development -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">Backend Development</span>
+        <!-- Pod 2: Backend Development -->
+        <div class="tech-pod" data-category="backend">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <h3 class="pod-title">Backend Development</h3>
+            </div>
+            <span class="pod-badge">4 tools</span>
           </div>
-          <div class="tech-items">
+          <div class="pod-items">
             <div class="tech-pill" style="--clr:#44B78B">
               <span class="tech-icon"><ion-icon name="leaf-outline"></ion-icon></span>
               <span class="tech-label">Django</span>
@@ -338,70 +441,16 @@
           </div>
         </div>
 
-        <!-- Row 3: CI/CD, Monitoring & Version Control -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">CI/CD, Monitoring &amp; VCS</span>
+        <!-- Pod 3: Cloud & Infrastructure -->
+        <div class="tech-pod" data-category="cloud">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="cloud-outline"></ion-icon></span>
+              <h3 class="pod-title">Cloud &amp; Infrastructure</h3>
+            </div>
+            <span class="pod-badge">8 services</span>
           </div>
-          <div class="tech-items">
-            <div class="tech-pill" style="--clr:#D33833">
-              <span class="tech-icon"><ion-icon name="sync-outline"></ion-icon></span>
-              <span class="tech-label">Jenkins</span>
-            </div>
-            <div class="tech-pill" style="--clr:#F05032">
-              <span class="tech-icon"><ion-icon name="logo-github"></ion-icon></span>
-              <span class="tech-label">Git</span>
-            </div>
-            <div class="tech-pill" style="--clr:#0052CC">
-              <span class="tech-icon"><ion-icon name="git-branch-outline"></ion-icon></span>
-              <span class="tech-label">Bitbucket</span>
-            </div>
-            <div class="tech-pill" style="--clr:#1CE783">
-              <span class="tech-icon"><ion-icon name="pulse-outline"></ion-icon></span>
-              <span class="tech-label">New Relic</span>
-            </div>
-            <div class="tech-pill" style="--clr:#362D59">
-              <span class="tech-icon"><ion-icon name="warning-outline"></ion-icon></span>
-              <span class="tech-label">Sentry</span>
-            </div>
-            <div class="tech-pill" style="--clr:#F46800">
-              <span class="tech-icon"><ion-icon name="bar-chart-outline"></ion-icon></span>
-              <span class="tech-label">Grafana</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 4: Data Engineering -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">Data Engineering &amp; Processing</span>
-          </div>
-          <div class="tech-items">
-            <div class="tech-pill" style="--clr:#017CEE">
-              <span class="tech-icon"><ion-icon name="git-merge-outline"></ion-icon></span>
-              <span class="tech-label">Apache Airflow</span>
-            </div>
-            <div class="tech-pill" style="--clr:#29B5E8">
-              <span class="tech-icon"><ion-icon name="snow-outline"></ion-icon></span>
-              <span class="tech-label">Snowflake</span>
-            </div>
-            <div class="tech-pill" style="--clr:#FF694A">
-              <span class="tech-icon"><ion-icon name="construct-outline"></ion-icon></span>
-              <span class="tech-label">dbt</span>
-            </div>
-            <div class="tech-pill" style="--clr:#A78BFA">
-              <span class="tech-icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
-              <span class="tech-label">ETL Pipelines</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 5: Cloud & Infrastructure -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">Cloud &amp; Infrastructure</span>
-          </div>
-          <div class="tech-items">
+          <div class="pod-items">
             <div class="tech-pill" style="--clr:#FF9900">
               <span class="tech-icon"><ion-icon name="logo-amazon"></ion-icon></span>
               <span class="tech-label">AWS EC2</span>
@@ -437,12 +486,16 @@
           </div>
         </div>
 
-        <!-- Row 6: AI & LLM Engineering -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">AI &amp; LLM Engineering</span>
+        <!-- Pod 4: AI & LLM Engineering -->
+        <div class="tech-pod" data-category="ai">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="hardware-chip-outline"></ion-icon></span>
+              <h3 class="pod-title">AI &amp; LLM Engineering</h3>
+            </div>
+            <span class="pod-badge">7 frameworks</span>
           </div>
-          <div class="tech-items">
+          <div class="pod-items">
             <div class="tech-pill" style="--clr:#A78BFA">
               <span class="tech-icon"><ion-icon name="search-outline"></ion-icon></span>
               <span class="tech-label">RAG</span>
@@ -474,12 +527,82 @@
           </div>
         </div>
 
-        <!-- Row 7: Databases & Caching -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">Databases &amp; Caching</span>
+        <!-- Pod 5: CI/CD, Monitoring & VCS -->
+        <div class="tech-pod" data-category="cloud">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="pulse-outline"></ion-icon></span>
+              <h3 class="pod-title">CI/CD, Monitoring &amp; VCS</h3>
+            </div>
+            <span class="pod-badge">6 tools</span>
           </div>
-          <div class="tech-items">
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#D33833">
+              <span class="tech-icon"><ion-icon name="sync-outline"></ion-icon></span>
+              <span class="tech-label">Jenkins</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F05032">
+              <span class="tech-icon"><ion-icon name="logo-github"></ion-icon></span>
+              <span class="tech-label">Git</span>
+            </div>
+            <div class="tech-pill" style="--clr:#0052CC">
+              <span class="tech-icon"><ion-icon name="git-branch-outline"></ion-icon></span>
+              <span class="tech-label">Bitbucket</span>
+            </div>
+            <div class="tech-pill" style="--clr:#1CE783">
+              <span class="tech-icon"><ion-icon name="pulse-outline"></ion-icon></span>
+              <span class="tech-label">New Relic</span>
+            </div>
+            <div class="tech-pill" style="--clr:#362D59">
+              <span class="tech-icon"><ion-icon name="warning-outline"></ion-icon></span>
+              <span class="tech-label">Sentry</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F46800">
+              <span class="tech-icon"><ion-icon name="bar-chart-outline"></ion-icon></span>
+              <span class="tech-label">Grafana</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 6: Data Engineering & Processing -->
+        <div class="tech-pod" data-category="data">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="git-merge-outline"></ion-icon></span>
+              <h3 class="pod-title">Data Engineering &amp; Processing</h3>
+            </div>
+            <span class="pod-badge">4 tools</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#017CEE">
+              <span class="tech-icon"><ion-icon name="git-merge-outline"></ion-icon></span>
+              <span class="tech-label">Apache Airflow</span>
+            </div>
+            <div class="tech-pill" style="--clr:#29B5E8">
+              <span class="tech-icon"><ion-icon name="snow-outline"></ion-icon></span>
+              <span class="tech-label">Snowflake</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF694A">
+              <span class="tech-icon"><ion-icon name="construct-outline"></ion-icon></span>
+              <span class="tech-label">dbt</span>
+            </div>
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+              <span class="tech-label">ETL Pipelines</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 7: Databases & Caching -->
+        <div class="tech-pod" data-category="backend">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="layers-outline"></ion-icon></span>
+              <h3 class="pod-title">Databases &amp; Caching</h3>
+            </div>
+            <span class="pod-badge">4 databases</span>
+          </div>
+          <div class="pod-items">
             <div class="tech-pill" style="--clr:#4479A1">
               <span class="tech-icon"><ion-icon name="server-outline"></ion-icon></span>
               <span class="tech-label">MySQL</span>
@@ -499,12 +622,16 @@
           </div>
         </div>
 
-        <!-- Row 8: Messaging & Distributed Systems -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">Messaging &amp; Distributed Systems</span>
+        <!-- Pod 8: Messaging & Distributed Systems -->
+        <div class="tech-pod" data-category="backend">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+              <h3 class="pod-title">Messaging &amp; Distributed Systems</h3>
+            </div>
+            <span class="pod-badge">3 brokers</span>
           </div>
-          <div class="tech-items">
+          <div class="pod-items">
             <div class="tech-pill" style="--clr:#B07FFD">
               <span class="tech-icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
               <span class="tech-label">Apache Kafka</span>
@@ -520,37 +647,16 @@
           </div>
         </div>
 
-        <!-- Row 9: Tools & Fundamentals -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">Tools &amp; Fundamentals</span>
+        <!-- Pod 9: AI-Assisted Development -->
+        <div class="tech-pod" data-category="ai">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="sparkles-outline"></ion-icon></span>
+              <h3 class="pod-title">AI-Assisted Development</h3>
+            </div>
+            <span class="pod-badge">4 tools</span>
           </div>
-          <div class="tech-items">
-            <div class="tech-pill" style="--clr:#0052CC">
-              <span class="tech-icon"><ion-icon name="apps-outline"></ion-icon></span>
-              <span class="tech-label">Jira</span>
-            </div>
-            <div class="tech-pill" style="--clr:#A78BFA">
-              <span class="tech-icon"><ion-icon name="git-branch-outline"></ion-icon></span>
-              <span class="tech-label">Data Structures</span>
-            </div>
-            <div class="tech-pill" style="--clr:#89E051">
-              <span class="tech-icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-              <span class="tech-label">SSH</span>
-            </div>
-            <div class="tech-pill" style="--clr:#C5A5C5">
-              <span class="tech-icon"><ion-icon name="code-slash-outline"></ion-icon></span>
-              <span class="tech-label">Shell Scripting</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 10: AI-Assisted Development -->
-        <div class="tech-row">
-          <div class="tech-row-label">
-            <span class="row-title">AI-Assisted Development</span>
-          </div>
-          <div class="tech-items">
+          <div class="pod-items">
             <div class="tech-pill" style="--clr:#00B4D8">
               <span class="tech-icon"><ion-icon name="sparkles-outline"></ion-icon></span>
               <span class="tech-label">Kiro</span>
@@ -569,80 +675,131 @@
             </div>
           </div>
         </div>
+
+        <!-- Pod 10: Tools & Fundamentals -->
+        <div class="tech-pod" data-category="data">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="construct-outline"></ion-icon></span>
+              <h3 class="pod-title">Tools &amp; Fundamentals</h3>
+            </div>
+            <span class="pod-badge">4 foundations</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#0052CC">
+              <span class="tech-icon"><ion-icon name="apps-outline"></ion-icon></span>
+              <span class="tech-label">Jira</span>
+            </div>
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="git-branch-outline"></ion-icon></span>
+              <span class="tech-label">Data Structures</span>
+            </div>
+            <div class="tech-pill" style="--clr:#89E051">
+              <span class="tech-icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+              <span class="tech-label">SSH</span>
+            </div>
+            <div class="tech-pill" style="--clr:#C5A5C5">
+              <span class="tech-icon"><ion-icon name="code-slash-outline"></ion-icon></span>
+              <span class="tech-label">Shell Scripting</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section class="section" id="projects">
+  <!-- ===== SHOWCASE ===== -->
+  <section class="section" id="showcase">
     <div class="section-inner">
-      <div class="section-divider">
+      <div class="section-divider" style="margin-bottom:20px">
         <span class="divider-dot"></span>
         <span class="divider-line"></span>
-        <span class="divider-label">PROJECTS</span>
+        <span class="divider-label">SHOWCASE</span>
         <span class="divider-line"></span>
         <span class="divider-dot"></span>
       </div>
 
-      <!-- Photography Project — uses portfolio images -->
+      <h2 class="section-title" style="text-align:center;margin-bottom:48px">Featured Showcase</h2>
+
+      <!-- Item 1: Knovera — Featured AI Document Intelligence (GitHub Highlight) -->
       <div class="project-row">
         <div class="project-text">
-          <p class="project-label">Featured Project</p>
-          <h3 class="project-name">Photography Portfolio</h3>
-          <p class="project-desc">A curated visual collection capturing fleeting moments through the art of storytelling. From the misty mountains of Himachal to the bustling streets of Delhi — each frame tells a story of India's beauty.</p>
-          <div class="project-links">
-            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" class="proj-link"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" class="proj-link"><ion-icon name="open-outline"></ion-icon></a>
+          <p class="project-label">FEATURED OPEN SOURCE // AI &amp; RAG</p>
+          <h3 class="project-name">Knovera</h3>
+          <p class="project-desc">
+            Turn any document into a conversational knowledge base. An open-source Retrieval-Augmented Generation (RAG) system utilizing neural embeddings, vector indexing, and LLM reasoning to extract semantic insights from complex multi-format documents with verified citations.
+          </p>
+          <div class="proj-tags">
+            <span>Python</span><span>RAG</span><span>LLMs</span><span>Vector Embeddings</span><span>LangChain</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/kartik-dhiman/knovera" target="_blank" rel="noopener noreferrer" class="proj-action-btn">
+              <ion-icon name="logo-github"></ion-icon>
+              <span>View on GitHub</span>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+            <a href="https://github.com/kartik-dhiman/knovera" target="_blank" rel="noopener noreferrer" class="proj-icon-btn" title="GitHub Repository">
+              <ion-icon name="open-outline"></ion-icon>
+            </a>
           </div>
         </div>
         <div class="project-preview">
-          <div class="preview-grid">
-            <img src="./assets/images/portfolio/placeholder-1.png" alt="Photography" loading="lazy">
-            <img src="./assets/images/portfolio/placeholder-2.png" alt="Photography" loading="lazy">
-            <img src="./assets/images/portfolio/placeholder-3.png" alt="Photography" loading="lazy">
-            <img src="./assets/images/portfolio/placeholder-4.png" alt="Photography" loading="lazy">
-          </div>
-        </div>
-      </div>
-
-      <!-- More Photography -->
-      <div class="project-row reverse">
-        <div class="project-text">
-          <p class="project-label">Visual Stories</p>
-          <h3 class="project-name">Travel &amp; Architecture</h3>
-          <p class="project-desc">Exploring the intersection of light, shadow, and structure. From ancient temples to modern cities — capturing the soul of every place through architectural and travel photography.</p>
-          <div class="project-links">
-            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" class="proj-link"><ion-icon name="logo-instagram"></ion-icon></a>
-          </div>
-        </div>
-        <div class="project-preview">
-          <div class="preview-grid preview-grid-2">
-            <img src="./assets/images/portfolio/placeholder-5.png" alt="Photography" loading="lazy">
-            <img src="./assets/images/portfolio/placeholder-6.png" alt="Photography" loading="lazy">
-          </div>
-        </div>
-      </div>
-
-      <!-- Dev Project — NO portfolio images, uses terminal/code style -->
-      <div class="project-row">
-        <div class="project-text">
-          <p class="project-label">Open Source</p>
-          <h3 class="project-name">Dev Contributions</h3>
-          <p class="project-desc">Active contributor to open-source ecosystem. Building developer tools, documentation frameworks, and scalable system design patterns that help teams ship faster.</p>
-          <div class="project-links">
-            <a href="https://github.com/kartik-dhiman" target="_blank" rel="noopener noreferrer" class="proj-link"><ion-icon name="logo-github"></ion-icon></a>
-          </div>
-        </div>
-        <div class="project-preview">
-          <!-- Terminal-style code preview instead of photos -->
+          <!-- Terminal code preview of Knovera Python Pipeline -->
           <div class="code-preview">
             <div class="code-header">
               <span class="code-dot red"></span>
               <span class="code-dot yellow"></span>
               <span class="code-dot green"></span>
-              <span class="code-title">~/projects/kartik-dhiman</span>
+              <span class="code-repo-tag"><ion-icon name="logo-github"></ion-icon> kartik-dhiman / knovera</span>
+              <span class="code-title">Python · RAG Engine</span>
             </div>
-            <pre class="code-body"><code><span class="code-comment">// System Architecture Design</span>
+            <pre class="code-body"><code><span class="code-comment"># Knovera: Conversational Knowledge Base Engine</span>
+<span class="code-kw">from</span> knovera <span class="code-kw">import</span> DocumentLoader, VectorStore, RAGPipeline
+
+<span class="code-comment"># Initialize vector store &amp; semantic chunking</span>
+rag = RAGPipeline(
+    embedding_model=<span class="code-str">"text-embedding-3-small"</span>,
+    vector_store=VectorStore(persist_dir=<span class="code-str">"./data"</span>),
+    chunk_size=1024, chunk_overlap=128
+)
+
+<span class="code-comment"># Ingest documents &amp; query conversational graph</span>
+kb = rag.ingest([<span class="code-str">"architecture.pdf"</span>, <span class="code-str">"telemetry.json"</span>])
+response = kb.query(<span class="code-str">"Explain the fault-tolerant routing logic"</span>)</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Open Source Dev Contributions & Computer Vision -->
+      <div class="project-row reverse">
+        <div class="project-text">
+          <p class="project-label">OPEN SOURCE &amp; AUTOMATION</p>
+          <h3 class="project-name">Dev Contributions &amp; Computer Vision</h3>
+          <p class="project-desc">
+            Active contributor to developer tooling, computer vision interfaces, and distributed systems. Exploring human-computer interaction through real-time OpenCV gesture tracking alongside reusable architecture design patterns that help teams build resilient software.
+          </p>
+          <div class="proj-tags">
+            <span>Python</span><span>OpenCV</span><span>Distributed Systems</span><span>CI/CD</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/kartik-dhiman" target="_blank" rel="noopener noreferrer" class="proj-action-btn">
+              <ion-icon name="logo-github"></ion-icon>
+              <span>Explore GitHub</span>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="project-preview">
+          <!-- Code Preview: Distributed Engine -->
+          <div class="code-preview">
+            <div class="code-header">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-repo-tag"><ion-icon name="logo-github"></ion-icon> kartik-dhiman / open-source</span>
+              <span class="code-title">Distributed Systems</span>
+            </div>
+            <pre class="code-body"><code><span class="code-comment">// High-Throughput Distributed Routing Engine</span>
 <span class="code-kw">class</span> <span class="code-fn">DistributedEngine</span> {
   <span class="code-kw">constructor</span>(config) {
     <span class="code-kw">this</span>.nodes = config.replicas;
@@ -654,6 +811,35 @@
     <span class="code-kw">return await</span> node.execute(request);
   }
 }</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Photography Portfolio & Visual Stories -->
+      <div class="project-row">
+        <div class="project-text">
+          <p class="project-label">VISUAL ARTISTRY // PHOTOGRAPHY</p>
+          <h3 class="project-name">Visual Stories &amp; Architecture</h3>
+          <p class="project-desc">
+            A curated visual collection capturing fleeting moments through the art of storytelling. Exploring the intersection of light, shadow, and architectural heritage across India — from ancient temples to misty Himalayan mountain trails.
+          </p>
+          <div class="proj-tags">
+            <span>Landscape</span><span>Architecture</span><span>Travel Stories</span><span>35mm</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" class="proj-action-btn">
+              <ion-icon name="logo-instagram"></ion-icon>
+              <span>Explore on Instagram</span>
+              <ion-icon name="open-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="project-preview">
+          <div class="preview-grid">
+            <img src="./assets/images/portfolio/placeholder-1.png" alt="Photography by Kartik Dhiman" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-2.png" alt="Photography by Kartik Dhiman" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-3.png" alt="Photography by Kartik Dhiman" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-4.png" alt="Photography by Kartik Dhiman" loading="lazy">
           </div>
         </div>
       </div>
@@ -680,10 +866,10 @@
             leading a team, or collaborating on open-source. Have a project in mind? Let's talk.
           </p>
           <div class="contact-socials">
-            <a href="https://linkedin.com/in/kartik-dhiman" target="_blank" rel="noopener noreferrer" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
-            <a href="https://github.com/kartik-dhiman" target="_blank" rel="noopener noreferrer" title="GitHub"><ion-icon name="logo-github"></ion-icon></a>
-            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="mailto:ikartikdhiman@gmail.com" title="Email"><ion-icon name="mail-outline"></ion-icon></a>
+            <a href="https://linkedin.com/in/kartik-dhiman" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="https://github.com/kartik-dhiman" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" title="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="mailto:ikartikdhiman@gmail.com" aria-label="Send Email" title="Email"><ion-icon name="mail-outline"></ion-icon></a>
           </div>
         </div>
 
@@ -708,7 +894,7 @@
   </a>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="./assets/js/script.js?v=3.8"></script>
+  <script src="./assets/js/script.js?v=4.1"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
