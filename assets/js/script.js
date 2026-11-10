@@ -324,3 +324,230 @@ document.addEventListener('DOMContentLoaded', function () {
     retina_detect: true
   });
 });
+
+// ===== Interactive Natural Perching & Peeking Cat Easter Egg =====
+(function siteCat() {
+  const cat = document.getElementById('siteCat');
+  const speech = document.getElementById('catSpeech');
+  if (!cat || !speech) return;
+
+  const purrQuotes = [
+    'Purr purr... 😺',
+    'Meow! 🐾',
+    'Mrrrp? 🐾',
+    'Purrrrrr... ❤️',
+    'Mew! 🐾',
+    'Purr... purr... ✨',
+    '*kneads paws* 🐾',
+    '*purr* =^.^=',
+    'Meow meow! 🐾',
+    '*happy tail swish* 🐱'
+  ];
+
+  const petResponses = [
+    'Purrrrrr! ❤️ =^.^=',
+    '*purr purr purr* 🐾',
+    'Meow! =^.^=',
+    '*head bumps hand* ❤️',
+    '*happy purrs* 🐱',
+    '*kneads happily* 🐾'
+  ];
+
+  let isBusy = false;
+  let routineTimer = null;
+  let speechTimer = null;
+  let actionTimeout = null;
+
+  function showMeow(text, duration = 2800) {
+    speech.textContent = text;
+    cat.classList.add('has-speech');
+    clearTimeout(speechTimer);
+    speechTimer = setTimeout(() => {
+      cat.classList.remove('has-speech');
+    }, duration);
+  }
+
+  function resetCat() {
+    cat.className = 'site-cat';
+    cat.style.transition = '';
+    cat.style.left = '';
+    cat.style.top = '';
+    cat.style.right = '';
+    cat.style.transform = '';
+    isBusy = false;
+  }
+
+  function hideCat(callback) {
+    cat.classList.remove('has-speech');
+    cat.classList.add('is-hiding');
+    setTimeout(() => {
+      resetCat();
+      if (callback) callback();
+    }, 380);
+  }
+
+  // Find visible horizontal cards currently on screen
+  function getPerchableCards() {
+    const selectors = [
+      '.bento-stat-card',
+      '.timeline-content',
+      '.tech-pod',
+      '.work-competencies-card',
+      '.code-preview',
+      '.hero-terminal',
+      '.bento-passion-card',
+      '.project-row'
+    ];
+    const elements = document.querySelectorAll(selectors.join(', '));
+    const viewH = window.innerHeight;
+    const viewW = window.innerWidth;
+    const list = [];
+
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top >= 75 && rect.bottom <= viewH - 30 && rect.width >= 120) {
+        list.push({
+          el,
+          rect,
+          surfaceY: Math.round(rect.top - 38), // Paws at Y=38 rest directly on card top border
+          perchX: Math.round(rect.left + Math.max(15, Math.min(rect.width - 70, rect.width * (0.35 + Math.random() * 0.35))))
+        });
+      }
+    });
+
+    return list;
+  }
+
+  // Perch on a card top border: paws resting naturally on the edge
+  function perchOnCard(card) {
+    const { surfaceY, perchX } = card;
+
+    cat.className = 'site-cat';
+    cat.style.left = `${perchX}px`;
+    cat.style.top = `${surfaceY}px`;
+    cat.style.right = 'auto';
+    void cat.offsetWidth;
+
+    // Cat emerges smoothly from behind the card
+    cat.classList.add('is-visible');
+
+    const firstMsg = purrQuotes[Math.floor(Math.random() * purrQuotes.length)];
+    setTimeout(() => {
+      if (!isBusy || cat.classList.contains('is-hiding')) return;
+      showMeow(firstMsg, 2400);
+    }, 250);
+
+    // After 1.5s, cat pats/kneads the card border
+    actionTimeout = setTimeout(() => {
+      if (!isBusy || cat.classList.contains('is-hiding')) return;
+      cat.classList.add('is-patting');
+
+      // Purr again
+      setTimeout(() => {
+        if (!isBusy || cat.classList.contains('is-hiding')) return;
+        showMeow('Purr purr... ❤️', 2200);
+      }, 800);
+
+      // Duck down and hide after 4.5 seconds
+      actionTimeout = setTimeout(() => {
+        if (!isBusy || cat.classList.contains('is-hiding')) return;
+        hideCat();
+      }, 3400);
+
+    }, 1500);
+  }
+
+  // Peek out from screen left or right edge
+  function peekFromScreenEdge() {
+    const isLeft = Math.random() > 0.5;
+    const viewH = window.innerHeight;
+    const targetY = Math.max(100, Math.floor(Math.random() * (viewH - 220) + 100));
+
+    cat.className = 'site-cat';
+    cat.style.top = `${targetY}px`;
+
+    if (isLeft) {
+      cat.style.left = '10px';
+      cat.style.right = 'auto';
+    } else {
+      cat.style.right = '10px';
+      cat.style.left = 'auto';
+    }
+    void cat.offsetWidth;
+
+    cat.classList.add('is-visible');
+
+    const msg = purrQuotes[Math.floor(Math.random() * purrQuotes.length)];
+    setTimeout(() => {
+      if (!isBusy || cat.classList.contains('is-hiding')) return;
+      showMeow(msg, 2600);
+    }, 280);
+
+    // Stays for 3.8s, then ducks back into the edge
+    actionTimeout = setTimeout(() => {
+      if (!isBusy || cat.classList.contains('is-hiding')) return;
+      hideCat();
+    }, 3800);
+  }
+
+  // Main Director Routine
+  function startCatRoutine() {
+    if (isBusy) return;
+    isBusy = true;
+
+    const cards = getPerchableCards();
+
+    // 70% chance to perch on a card, 30% chance to peek from screen edge
+    if (cards.length > 0 && Math.random() < 0.7) {
+      const chosen = cards[Math.floor(Math.random() * cards.length)];
+      perchOnCard(chosen);
+    } else {
+      peekFromScreenEdge();
+    }
+  }
+
+  function scheduleNext() {
+    clearTimeout(routineTimer);
+    // Appears every 14 to 20 seconds
+    const delay = Math.floor(Math.random() * 6000) + 14000;
+    routineTimer = setTimeout(() => {
+      startCatRoutine();
+      scheduleNext();
+    }, delay);
+  }
+
+  // Click on Cat: Purr & Pet celebration Easter Egg!
+  cat.addEventListener('click', () => {
+    if (cat.classList.contains('is-pet')) return;
+    clearTimeout(actionTimeout);
+    clearTimeout(speechTimer);
+    clearTimeout(routineTimer);
+
+    const petText = petResponses[Math.floor(Math.random() * petResponses.length)];
+    speech.textContent = petText;
+    cat.classList.add('has-speech', 'is-pet');
+
+    setTimeout(() => {
+      resetCat();
+      scheduleNext();
+    }, 850);
+  });
+
+  // Duck and hide smoothly on scroll to prevent misalignment
+  let scrollDebounce;
+  window.addEventListener('scroll', () => {
+    if (isBusy && !cat.classList.contains('is-pet')) {
+      clearTimeout(scrollDebounce);
+      scrollDebounce = setTimeout(() => {
+        clearTimeout(actionTimeout);
+        hideCat();
+      }, 60);
+    }
+  }, { passive: true });
+
+  // First appearance 3 seconds after page loads!
+  setTimeout(() => {
+    startCatRoutine();
+    scheduleNext();
+  }, 3000);
+})();
