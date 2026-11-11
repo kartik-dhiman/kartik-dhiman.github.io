@@ -2,136 +2,980 @@
 <html lang="en">
 
 <head>
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-
-  <link rel="stylesheet" href="css/aos.css">
-
-  <link rel="stylesheet" href="css/ionicons.min.css">
-
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kartik Dhiman — Software Engineer</title>
+  <meta name="description" content="Portfolio of Kartik Dhiman — Senior Software Engineer, Pianist, and Photographer.">
+  <link rel="shortcut icon" href="./assets/images/my-avatar.png?v=2" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css?v=35">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div id="particles-js"></div>
+  <!-- Scanline overlay -->
+  <div class="scanlines"></div>
 
-  <div id="custom-design-page">
-    <a href="#" class="js-custom-design-nav-toggle custom-design-nav-toggle"><i></i></a>
-    <aside id="custom-design-aside" role="complementary" class="js-fullheight text-center">
-      <h1 id="custom-design-logo"><a href="index.html"><span class="img"
-            style="background-image: url(images/author.jpg);"></span>Kartik Dhiman</a></h1>
-      <nav id="custom-design-main-menu" role="navigation">
-        <ul>
-          <li class="custom-design-active"><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-        </ul>
-      </nav>
+  <!-- ===== ILLUMINATING FLOATING HUD DOCK (Reveals when scrolling past Cockpit) ===== -->
+  <nav class="illuminating-dock" id="floatingDock" aria-label="Quick Navigation">
+    <div class="dock-glow-aura"></div>
+    <div class="dock-light-runner"></div>
+    <div class="dock-container">
+      <a href="#hero" class="dock-brand" aria-label="Return to Command Center" title="Kartik Dhiman — Command Center">
+        <div class="dock-avatar-capsule">
+          <div class="dock-avatar-halo"></div>
+          <img src="./assets/images/my-avatar.png?v=2" alt="KD" class="dock-avatar-img">
+          <span class="dock-live-pulse"></span>
+        </div>
+      </a>
+      <div class="dock-divider"></div>
+      <div class="dock-links">
+        <a href="#hero" class="dock-nav-item" data-nav="hero">
+          <ion-icon name="person-outline"></ion-icon>
+          <span>Overview</span>
+        </a>
+        <a href="#work" class="dock-nav-item" data-nav="work">
+          <ion-icon name="briefcase-outline"></ion-icon>
+          <span>Experience</span>
+        </a>
+        <a href="#tech" class="dock-nav-item" data-nav="tech">
+          <ion-icon name="layers-outline"></ion-icon>
+          <span>Tech Stack</span>
+        </a>
+        <a href="#showcase" class="dock-nav-item" data-nav="showcase">
+          <ion-icon name="sparkles-outline"></ion-icon>
+          <span>Showcase</span>
+        </a>
+      </div>
+      <a href="#contact" class="dock-action-btn">
+        <ion-icon name="flash-outline"></ion-icon>
+        <span>Connect</span>
+      </a>
+    </div>
+  </nav>
 
-      <div class="custom-design-footer">
-        <h3>Newsletter</h3>
-        <div class="d-flex justify-content-center">
-          <form action="#" class="custom-design-subscribe-form">
-            <div class="form-group d-flex">
-              <div class="icon"><span class="icon-paper-plane"></span></div>
-              <input type="text" class="form-control" placeholder="Enter Email Address">
+  <!-- ===== COMMAND CENTER: HERO & ABOUT (MERGED) ===== -->
+  <section class="hero hero-merged" id="hero">
+    <!-- Grid background for hero -->
+    <div class="hero-grid-bg"></div>
+
+    <div class="hero-cockpit">
+      <!-- ===== WING 1: IDENTITY, HEADLINE & BIO ===== -->
+      <div class="hero-profile-col">
+        <!-- Identity Row: Avatar + Greeting & Dynamic Roles -->
+        <div class="hero-identity-row">
+          <div class="hero-avatar-wrap">
+            <div class="avatar-mask">
+              <img src="./assets/images/my-avatar.png?v=2" alt="Kartik Dhiman" class="hero-avatar-img">
             </div>
-          </form>
+            <div class="avatar-ring"></div>
+            <div class="avatar-glow"></div>
+            <div class="avatar-scan"></div>
+          </div>
+
+          <div class="hero-greeting-box">
+            <p class="hero-greeting">Hello! I Am <span class="highlight">Kartik Dhiman</span></p>
+            <p class="hero-label" id="heroLabel">A Software Engineer who</p>
+            <h1 class="hero-headline" id="heroHeadline">Builds systems<br>that <span class="highlight-circle">scale</span>...</h1>
+            <p class="hero-sub" id="heroSub">Because if the architecture is right, everything else follows.</p>
+          </div>
+        </div>
+
+        <!-- Narrative Bio -->
+        <p class="hero-bio">
+          Senior Software Engineer specializing in resilient distributed architectures, AI engineering, and high-throughput pipelines. Blending high-performance systems engineering with creative artistry across piano harmonies and visual storytelling.
+        </p>
+
+        <!-- Command Teleport Actions -->
+        <nav class="hero-nav-dock" aria-label="Section Navigation">
+          <a href="#contact" class="dock-btn dock-btn-primary">
+            <ion-icon name="paper-plane-outline"></ion-icon>
+            <span>Let's Connect</span>
+          </a>
+          <a href="#work" class="dock-btn">
+            <ion-icon name="briefcase-outline"></ion-icon>
+            <span>Experience</span>
+          </a>
+          <a href="#tech" class="dock-btn">
+            <ion-icon name="layers-outline"></ion-icon>
+            <span>Tech Stack</span>
+          </a>
+          <a href="#showcase" class="dock-btn">
+            <ion-icon name="sparkles-outline"></ion-icon>
+            <span>Showcase</span>
+          </a>
+        </nav>
+
+        <!-- Terminal status console -->
+        <div class="hero-terminal">
+          <span class="term-prompt">$</span>
+          <span class="term-text" id="terminalText"></span>
+          <span class="term-cursor">█</span>
         </div>
       </div>
-    </aside> <!-- END custom-design-ASIDE -->
-    <div id="custom-design-main">
-      <section class="custom-section-no-padding bg-light">
-        <div class="hero-wrap">
-          <div class="overlay"></div>
-          <div class="d-flex align-items-center js-fullheight">
-            <div class="author-image text img d-flex">
-              <section class="home-slider js-fullheight owl-carousel">
-                <div class="slider-item js-fullheight" style="background-image: url(images/author.jpg);">
-                </div>
 
-                <!-- <div class="slider-item js-fullheight" style="background-image:url(images/author-2.jpg);">
-					      </div> -->
-              </section>
+      <!-- ===== WING 2: BENTO HUD (STATS + PASSIONS + MISSION) ===== -->
+      <div class="hero-bento-col" id="about">
+        <!-- Bento Header Tag -->
+        <div class="bento-header">
+          <div class="bento-badge">
+            <span class="bento-pulse"></span>
+            <span class="bento-title">CAREER IMPACT &amp; METRICS</span>
+          </div>
+          <span class="bento-tag">2018 — PRESENT</span>
+        </div>
+
+        <!-- 4 Stat Cards in 2x2 Grid -->
+        <div class="bento-stats-grid">
+          <div class="bento-stat-card">
+            <div class="stat-top">
+              <div class="stat-val-group">
+                <span class="stat-num" data-count="8">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-icon-pill"><ion-icon name="time-outline"></ion-icon></span>
             </div>
-            <div class="author-info text p-3 p-md-5">
-              <div class="desc">
-                <span class="subheading">Hello! I'm</span>
-                <h1 class="big-letter">Kartik Dhiman</h1>
-                <h1 class="mb-4"><span>Kartik Dhiman</span> <br>A Philanthropist</h1>
-                <p class="mb-4">Pianist (beginner) and a full time Software Engineer, Exploring all the high, mids and
-                  low of this cinematic universe.</p>
-                <p class="mb-4">As Mr. Stark said...<br>Sometimes You Gotta Run Before You Can Walk.</p>
-                <h3 class="signature h1">kArTik</h3>
-                <ul class="custom-social mt-3">
-                  <li class="custom-animate"><a href="https://linkedin.com/in/kartik-dhiman"><span
-                        class="icon-linkedin"></span></a></li>
-                  <li class="custom-animate"><a href="https://github.com/kartik-dhiman"><span
-                        class="icon-github"></span></a></li>
-                  <li class="custom-animate"><a href="https://instagram.com/sporadical_traveller"><span
-                        class="icon-instagram"></span></a></li>
-                </ul>
+            <span class="stat-label">Years Experience</span>
+            <span class="stat-meta">Senior Backend &amp; Architecture</span>
+          </div>
+
+          <div class="bento-stat-card">
+            <div class="stat-top">
+              <div class="stat-val-group">
+                <span class="stat-num" data-count="70">0</span><span class="stat-suffix">%</span>
+              </div>
+              <span class="stat-icon-pill"><ion-icon name="flash-outline"></ion-icon></span>
+            </div>
+            <span class="stat-label">Efficiency Boost</span>
+            <span class="stat-meta">Latency Reduction &amp; Scaling</span>
+          </div>
+
+          <div class="bento-stat-card">
+            <div class="stat-top">
+              <div class="stat-val-group">
+                <span class="stat-num" data-count="50">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-icon-pill"><ion-icon name="cloud-upload-outline"></ion-icon></span>
+            </div>
+            <span class="stat-label">Production Deploys</span>
+            <span class="stat-meta">Microservices &amp; ETL Pipelines</span>
+          </div>
+
+          <div class="bento-stat-card">
+            <div class="stat-top">
+              <div class="stat-val-group">
+                <span class="stat-num" data-count="20">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-icon-pill"><ion-icon name="people-outline"></ion-icon></span>
+            </div>
+            <span class="stat-label">Engineers Mentored</span>
+            <span class="stat-meta">Code Reviews &amp; Tech Growth</span>
+          </div>
+        </div>
+
+        <!-- Beyond Code — Dual Passion Cards with Equalizer & Viewfinder -->
+        <div class="bento-passions-grid">
+          <!-- Pianist & Composer -->
+          <div class="bento-passion-card">
+            <div class="passion-header">
+              <div class="passion-icon piano-icon">
+                <ion-icon name="musical-notes-outline"></ion-icon>
+              </div>
+              <div class="soundwave" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <h4>Pianist &amp; Composer</h4>
+            <p>Exploring mystical harmonies across 88 keys. Classical discipline meets modern melodic expression.</p>
+          </div>
+
+          <!-- Photographer & Storyteller -->
+          <div class="bento-passion-card">
+            <div class="passion-header">
+              <div class="passion-icon photo-icon">
+                <ion-icon name="camera-outline"></ion-icon>
+              </div>
+              <span class="viewfinder-tag">
+                <span class="viewfinder-dot"></span>
+                <span>ISO 100 // 35mm</span>
+              </span>
+            </div>
+            <h4>Photographer &amp; Storyteller</h4>
+            <p>Capturing fleeting light and visual narratives across India. Specializing in landscape, architecture &amp; travel.</p>
+          </div>
+        </div>
+
+        <!-- Mission Status Strip -->
+        <div class="bento-status-strip">
+          <div class="strip-left">
+            <span class="strip-live-dot"></span>
+            <span class="strip-msg">Open for High-Impact Roles &amp; Technical Architecture</span>
+          </div>
+          <a href="#contact" class="strip-action">
+            <span>Get in touch</span>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== WORK EXPERIENCE ===== -->
+  <section class="section" id="work">
+    <div class="section-inner">
+      <div class="section-divider" style="margin-bottom:20px">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-label">EXPERIENCE</span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
+
+      <h2 class="section-title" style="text-align:center;margin-bottom:30px">Work Experience</h2>
+
+      <div class="timeline-container">
+        <!-- Glowing central spine -->
+        <div class="timeline-line"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot"><ion-icon name="rocket"></ion-icon></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023 — PRESENT</span>
+            <h3>Senior Software Engineer</h3>
+            <p>Architecting complex distributed systems processing millions of transactions. Leading a team of 8 engineers, mentoring junior developers, and driving 70% efficiency improvements through highly scalable microservice solutions.</p>
+            <div class="exp-tags">
+              <span>Python</span><span>AWS</span><span>System Architecture</span><span>K8s</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot"><ion-icon name="hardware-chip"></ion-icon></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2018 — 2022</span>
+            <h3>Software Engineer</h3>
+            <p>Designed and built robust backend APIs resulting in 20% latency reduction. Built automated CI/CD pipelines, integrated security protocols, and relentlessly optimized Postgres queries for high-traffic financial applications.</p>
+            <div class="exp-tags">
+              <span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>Redis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Engineering Competencies & Proficiency Distribution -->
+      <div class="work-competencies-card reveal">
+        <div class="comp-card-header">
+          <div class="comp-header-left">
+            <span class="comp-badge"><ion-icon name="analytics-outline"></ion-icon> CORE PROFICIENCIES</span>
+            <h3 class="comp-heading">Engineering Impact &amp; Competency Distribution</h3>
+            <p class="comp-subtext">Quantified operational mastery across distributed system design, throughput tuning &amp; reliability</p>
+          </div>
+          <div class="comp-header-stat">
+            <span class="comp-stat-val">8+</span>
+            <span class="comp-stat-lbl">Years Experience</span>
+          </div>
+        </div>
+
+        <div class="comp-bars-grid">
+          <div class="comp-bar-item" data-pct="80">
+            <div class="comp-bar-meta">
+              <span class="comp-bar-title"><ion-icon name="git-network-outline"></ion-icon> System Architecture Design</span>
+              <span class="comp-bar-score">80%</span>
+            </div>
+            <div class="comp-progress-track">
+              <div class="comp-progress-fill" style="--comp-fill: 80%; --fill-grad: linear-gradient(90deg, #00d4ff, #00ff88); --glow-clr: rgba(0, 212, 255, 0.4);">
+                <span class="comp-fill-glow"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp-bar-item" data-pct="90">
+            <div class="comp-bar-meta">
+              <span class="comp-bar-title"><ion-icon name="git-commit-outline"></ion-icon> Workflow Optimization</span>
+              <span class="comp-bar-score">90%</span>
+            </div>
+            <div class="comp-progress-track">
+              <div class="comp-progress-fill" style="--comp-fill: 90%; --fill-grad: linear-gradient(90deg, #00ff88, #64ffda); --glow-clr: rgba(0, 255, 136, 0.4);">
+                <span class="comp-fill-glow"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp-bar-item" data-pct="80">
+            <div class="comp-bar-meta">
+              <span class="comp-bar-title"><ion-icon name="shield-checkmark-outline"></ion-icon> Problem Solving And Issue Resolution</span>
+              <span class="comp-bar-score">80%</span>
+            </div>
+            <div class="comp-progress-track">
+              <div class="comp-progress-fill" style="--comp-fill: 80%; --fill-grad: linear-gradient(90deg, #a78bfa, #00d4ff); --glow-clr: rgba(167, 139, 250, 0.4);">
+                <span class="comp-fill-glow"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp-bar-item" data-pct="70">
+            <div class="comp-bar-meta">
+              <span class="comp-bar-title"><ion-icon name="speedometer-outline"></ion-icon> Performance Optimization</span>
+              <span class="comp-bar-score">70%</span>
+            </div>
+            <div class="comp-progress-track">
+              <div class="comp-progress-fill" style="--comp-fill: 70%; --fill-grad: linear-gradient(90deg, #ff9900, #ffd166); --glow-clr: rgba(255, 153, 0, 0.4);">
+                <span class="comp-fill-glow"></span>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="section tech-section" id="tech">
+    <div class="section-inner">
+      <div class="section-divider" style="margin-bottom:20px">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-label">TECH STACK</span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
+      <h2 class="section-title" style="text-align:center;margin-bottom:12px">Architecture &amp; Technologies</h2>
+      <p class="tech-text" style="text-align:center;margin-bottom:32px">Production-grade distributed systems, cloud infrastructure &amp; AI tooling</p>
+
+      <!-- Interactive Domain Filter Hub -->
+      <div class="tech-filter-bar">
+        <button class="tech-filter-btn active" data-filter="all">
+          <span class="filter-dot"></span>
+          <span>All Domains</span>
+          <span class="filter-count">10</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="backend">
+          <span>Backend &amp; Core</span>
+          <span class="filter-count">4</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="ai">
+          <span>AI &amp; LLMs</span>
+          <span class="filter-count">2</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="cloud">
+          <span>Cloud &amp; DevOps</span>
+          <span class="filter-count">2</span>
+        </button>
+        <button class="tech-filter-btn" data-filter="data">
+          <span>Data &amp; Pipelines</span>
+          <span class="filter-count">2</span>
+        </button>
+      </div>
+
+      <!-- Bento Grid of 10 Tech Domain Pods -->
+      <div class="tech-bento-grid">
+        <!-- Pod 1: Languages & Scripting -->
+        <div class="tech-pod" data-category="backend">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="terminal-outline"></ion-icon></span>
+              <h3 class="pod-title">Languages &amp; Scripting</h3>
+            </div>
+            <span class="pod-badge">5 tools</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#3776AB">
+              <span class="tech-icon"><ion-icon name="logo-python"></ion-icon></span>
+              <span class="tech-label">Python</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F7DF1E">
+              <span class="tech-icon"><ion-icon name="logo-javascript"></ion-icon></span>
+              <span class="tech-label">JavaScript</span>
+            </div>
+            <div class="tech-pill" style="--clr:#336791">
+              <span class="tech-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <span class="tech-label">SQL</span>
+            </div>
+            <div class="tech-pill" style="--clr:#89E051">
+              <span class="tech-icon"><ion-icon name="terminal-outline"></ion-icon></span>
+              <span class="tech-label">Bash</span>
+            </div>
+            <div class="tech-pill" style="--clr:#C5A5C5">
+              <span class="tech-icon"><ion-icon name="code-working-outline"></ion-icon></span>
+              <span class="tech-label">Zsh</span>
+            </div>
           </div>
         </div>
-      </section>
+
+        <!-- Pod 2: Backend Development -->
+        <div class="tech-pod" data-category="backend">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <h3 class="pod-title">Backend Development</h3>
+            </div>
+            <span class="pod-badge">4 tools</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#44B78B">
+              <span class="tech-icon"><ion-icon name="leaf-outline"></ion-icon></span>
+              <span class="tech-label">Django</span>
+            </div>
+            <div class="tech-pill" style="--clr:#E10098">
+              <span class="tech-icon"><ion-icon name="git-network-outline"></ion-icon></span>
+              <span class="tech-label">GraphQL</span>
+            </div>
+            <div class="tech-pill" style="--clr:#43B02A">
+              <span class="tech-icon"><ion-icon name="bug-outline"></ion-icon></span>
+              <span class="tech-label">Selenium</span>
+            </div>
+            <div class="tech-pill" style="--clr:#7952B3">
+              <span class="tech-icon"><ion-icon name="grid-outline"></ion-icon></span>
+              <span class="tech-label">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 3: Cloud & Infrastructure -->
+        <div class="tech-pod" data-category="cloud">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="cloud-outline"></ion-icon></span>
+              <h3 class="pod-title">Cloud &amp; Infrastructure</h3>
+            </div>
+            <span class="pod-badge">8 services</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="logo-amazon"></ion-icon></span>
+              <span class="tech-label">AWS EC2</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="cube-outline"></ion-icon></span>
+              <span class="tech-label">AWS ECS</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="archive-outline"></ion-icon></span>
+              <span class="tech-label">AWS S3</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <span class="tech-label">AWS RDS</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF9900">
+              <span class="tech-icon"><ion-icon name="pulse-outline"></ion-icon></span>
+              <span class="tech-label">AWS CloudWatch</span>
+            </div>
+            <div class="tech-pill" style="--clr:#2496ED">
+              <span class="tech-icon"><ion-icon name="logo-docker"></ion-icon></span>
+              <span class="tech-label">Docker</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FCC624">
+              <span class="tech-icon"><ion-icon name="terminal-outline"></ion-icon></span>
+              <span class="tech-label">Linux</span>
+            </div>
+            <div class="tech-pill" style="--clr:#D4D4D4">
+              <span class="tech-icon"><ion-icon name="terminal-outline"></ion-icon></span>
+              <span class="tech-label">Unix</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 4: AI & LLM Engineering -->
+        <div class="tech-pod" data-category="ai">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="hardware-chip-outline"></ion-icon></span>
+              <h3 class="pod-title">AI &amp; LLM Engineering</h3>
+            </div>
+            <span class="pod-badge">7 frameworks</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="search-outline"></ion-icon></span>
+              <span class="tech-label">RAG</span>
+            </div>
+            <div class="tech-pill" style="--clr:#C084FC">
+              <span class="tech-icon"><ion-icon name="hardware-chip-outline"></ion-icon></span>
+              <span class="tech-label">LLMs</span>
+            </div>
+            <div class="tech-pill" style="--clr:#818CF8">
+              <span class="tech-icon"><ion-icon name="cellular-outline"></ion-icon></span>
+              <span class="tech-label">Embeddings</span>
+            </div>
+            <div class="tech-pill" style="--clr:#60A5FA">
+              <span class="tech-icon"><ion-icon name="scan-outline"></ion-icon></span>
+              <span class="tech-label">OCR</span>
+            </div>
+            <div class="tech-pill" style="--clr:#22D3EE">
+              <span class="tech-icon"><ion-icon name="link-outline"></ion-icon></span>
+              <span class="tech-label">LangChain</span>
+            </div>
+            <div class="tech-pill" style="--clr:#34D399">
+              <span class="tech-icon"><ion-icon name="git-merge-outline"></ion-icon></span>
+              <span class="tech-label">LangGraph</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F472B6">
+              <span class="tech-icon"><ion-icon name="extension-puzzle-outline"></ion-icon></span>
+              <span class="tech-label">MCP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 5: CI/CD, Monitoring & VCS -->
+        <div class="tech-pod" data-category="cloud">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="pulse-outline"></ion-icon></span>
+              <h3 class="pod-title">CI/CD, Monitoring &amp; VCS</h3>
+            </div>
+            <span class="pod-badge">6 tools</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#D33833">
+              <span class="tech-icon"><ion-icon name="sync-outline"></ion-icon></span>
+              <span class="tech-label">Jenkins</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F05032">
+              <span class="tech-icon"><ion-icon name="logo-github"></ion-icon></span>
+              <span class="tech-label">Git</span>
+            </div>
+            <div class="tech-pill" style="--clr:#0052CC">
+              <span class="tech-icon"><ion-icon name="git-branch-outline"></ion-icon></span>
+              <span class="tech-label">Bitbucket</span>
+            </div>
+            <div class="tech-pill" style="--clr:#1CE783">
+              <span class="tech-icon"><ion-icon name="pulse-outline"></ion-icon></span>
+              <span class="tech-label">New Relic</span>
+            </div>
+            <div class="tech-pill" style="--clr:#362D59">
+              <span class="tech-icon"><ion-icon name="warning-outline"></ion-icon></span>
+              <span class="tech-label">Sentry</span>
+            </div>
+            <div class="tech-pill" style="--clr:#F46800">
+              <span class="tech-icon"><ion-icon name="bar-chart-outline"></ion-icon></span>
+              <span class="tech-label">Grafana</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 6: Data Engineering & Processing -->
+        <div class="tech-pod" data-category="data">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="git-merge-outline"></ion-icon></span>
+              <h3 class="pod-title">Data Engineering &amp; Processing</h3>
+            </div>
+            <span class="pod-badge">4 tools</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#017CEE">
+              <span class="tech-icon"><ion-icon name="git-merge-outline"></ion-icon></span>
+              <span class="tech-label">Apache Airflow</span>
+            </div>
+            <div class="tech-pill" style="--clr:#29B5E8">
+              <span class="tech-icon"><ion-icon name="snow-outline"></ion-icon></span>
+              <span class="tech-label">Snowflake</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF694A">
+              <span class="tech-icon"><ion-icon name="construct-outline"></ion-icon></span>
+              <span class="tech-label">dbt</span>
+            </div>
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+              <span class="tech-label">ETL Pipelines</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 7: Databases & Caching -->
+        <div class="tech-pod" data-category="backend">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="layers-outline"></ion-icon></span>
+              <h3 class="pod-title">Databases &amp; Caching</h3>
+            </div>
+            <span class="pod-badge">4 databases</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#4479A1">
+              <span class="tech-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <span class="tech-label">MySQL</span>
+            </div>
+            <div class="tech-pill" style="--clr:#336791">
+              <span class="tech-icon"><ion-icon name="server-outline"></ion-icon></span>
+              <span class="tech-label">PostgreSQL</span>
+            </div>
+            <div class="tech-pill" style="--clr:#47A248">
+              <span class="tech-icon"><ion-icon name="leaf-outline"></ion-icon></span>
+              <span class="tech-label">MongoDB</span>
+            </div>
+            <div class="tech-pill" style="--clr:#DC382D">
+              <span class="tech-icon"><ion-icon name="flash-outline"></ion-icon></span>
+              <span class="tech-label">Redis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 8: Messaging & Distributed Systems -->
+        <div class="tech-pod" data-category="backend">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+              <h3 class="pod-title">Messaging &amp; Distributed Systems</h3>
+            </div>
+            <span class="pod-badge">3 brokers</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#B07FFD">
+              <span class="tech-icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+              <span class="tech-label">Apache Kafka</span>
+            </div>
+            <div class="tech-pill" style="--clr:#37B24D">
+              <span class="tech-icon"><ion-icon name="flower-outline"></ion-icon></span>
+              <span class="tech-label">Celery</span>
+            </div>
+            <div class="tech-pill" style="--clr:#FF6600">
+              <span class="tech-icon"><ion-icon name="mail-outline"></ion-icon></span>
+              <span class="tech-label">RabbitMQ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 9: AI-Assisted Development -->
+        <div class="tech-pod" data-category="ai">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="sparkles-outline"></ion-icon></span>
+              <h3 class="pod-title">AI-Assisted Development</h3>
+            </div>
+            <span class="pod-badge">4 tools</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#00B4D8">
+              <span class="tech-icon"><ion-icon name="sparkles-outline"></ion-icon></span>
+              <span class="tech-label">Kiro</span>
+            </div>
+            <div class="tech-pill" style="--clr:#D4A27F">
+              <span class="tech-icon"><ion-icon name="hardware-chip-outline"></ion-icon></span>
+              <span class="tech-label">Claude Code</span>
+            </div>
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="checkmark-done-outline"></ion-icon></span>
+              <span class="tech-label">AI-Assisted Testing</span>
+            </div>
+            <div class="tech-pill" style="--clr:#34D399">
+              <span class="tech-icon"><ion-icon name="document-text-outline"></ion-icon></span>
+              <span class="tech-label">Spec-Driven Dev</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pod 10: Tools & Fundamentals -->
+        <div class="tech-pod" data-category="data">
+          <div class="pod-header">
+            <div class="pod-title-group">
+              <span class="pod-icon"><ion-icon name="construct-outline"></ion-icon></span>
+              <h3 class="pod-title">Tools &amp; Fundamentals</h3>
+            </div>
+            <span class="pod-badge">4 foundations</span>
+          </div>
+          <div class="pod-items">
+            <div class="tech-pill" style="--clr:#0052CC">
+              <span class="tech-icon"><ion-icon name="apps-outline"></ion-icon></span>
+              <span class="tech-label">Jira</span>
+            </div>
+            <div class="tech-pill" style="--clr:#A78BFA">
+              <span class="tech-icon"><ion-icon name="git-branch-outline"></ion-icon></span>
+              <span class="tech-label">Data Structures</span>
+            </div>
+            <div class="tech-pill" style="--clr:#89E051">
+              <span class="tech-icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+              <span class="tech-label">SSH</span>
+            </div>
+            <div class="tech-pill" style="--clr:#C5A5C5">
+              <span class="tech-icon"><ion-icon name="code-slash-outline"></ion-icon></span>
+              <span class="tech-label">Shell Scripting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOWCASE ===== -->
+  <section class="section" id="showcase">
+    <div class="section-inner">
+      <div class="section-divider" style="margin-bottom:20px">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-label">SHOWCASE</span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
+
+      <h2 class="section-title" style="text-align:center;margin-bottom:48px">Featured Showcase</h2>
+
+      <!-- Item 1: Knovera — Featured AI Document Intelligence (GitHub Highlight) -->
+      <div class="project-row">
+        <div class="project-text">
+          <p class="project-label">FEATURED OPEN SOURCE // AI &amp; RAG</p>
+          <h3 class="project-name">Knovera</h3>
+          <p class="project-desc">
+            Turn any document into a conversational knowledge base. An open-source Retrieval-Augmented Generation (RAG) system utilizing neural embeddings, vector indexing, and LLM reasoning to extract semantic insights from complex multi-format documents with verified citations.
+          </p>
+          <div class="proj-tags">
+            <span>Python</span><span>RAG</span><span>LLMs</span><span>Vector Embeddings</span><span>LangChain</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/kartik-dhiman/knovera" target="_blank" rel="noopener noreferrer" class="proj-action-btn">
+              <ion-icon name="logo-github"></ion-icon>
+              <span>View on GitHub</span>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+            <a href="https://github.com/kartik-dhiman/knovera" target="_blank" rel="noopener noreferrer" class="proj-icon-btn" title="GitHub Repository">
+              <ion-icon name="open-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="project-preview">
+          <!-- Terminal code preview of Knovera Python Pipeline -->
+          <div class="code-preview">
+            <div class="code-header">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-repo-tag"><ion-icon name="logo-github"></ion-icon> kartik-dhiman / knovera</span>
+              <span class="code-title">Python · RAG Engine</span>
+            </div>
+            <pre class="code-body"><code><span class="code-comment"># Knovera: Conversational Knowledge Base Engine</span>
+<span class="code-kw">from</span> knovera <span class="code-kw">import</span> DocumentLoader, VectorStore, RAGPipeline
+
+<span class="code-comment"># Initialize vector store &amp; semantic chunking</span>
+rag = RAGPipeline(
+    embedding_model=<span class="code-str">"text-embedding-3-small"</span>,
+    vector_store=VectorStore(persist_dir=<span class="code-str">"./data"</span>),
+    chunk_size=1024, chunk_overlap=128
+)
+
+<span class="code-comment"># Ingest documents &amp; query conversational graph</span>
+kb = rag.ingest([<span class="code-str">"architecture.pdf"</span>, <span class="code-str">"telemetry.json"</span>])
+response = kb.query(<span class="code-str">"Explain the fault-tolerant routing logic"</span>)</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Open Source Dev Contributions & Computer Vision -->
+      <div class="project-row reverse">
+        <div class="project-text">
+          <p class="project-label">OPEN SOURCE &amp; AUTOMATION</p>
+          <h3 class="project-name">Dev Contributions &amp; Computer Vision</h3>
+          <p class="project-desc">
+            Active contributor to developer tooling, computer vision interfaces, and distributed systems. Exploring human-computer interaction through real-time OpenCV gesture tracking alongside reusable architecture design patterns that help teams build resilient software.
+          </p>
+          <div class="proj-tags">
+            <span>Python</span><span>OpenCV</span><span>Distributed Systems</span><span>CI/CD</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/kartik-dhiman" target="_blank" rel="noopener noreferrer" class="proj-action-btn">
+              <ion-icon name="logo-github"></ion-icon>
+              <span>Explore GitHub</span>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="project-preview">
+          <!-- Code Preview: Distributed Engine -->
+          <div class="code-preview">
+            <div class="code-header">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-repo-tag"><ion-icon name="logo-github"></ion-icon> kartik-dhiman / open-source</span>
+              <span class="code-title">Distributed Systems</span>
+            </div>
+            <pre class="code-body"><code><span class="code-comment">// High-Throughput Distributed Routing Engine</span>
+<span class="code-kw">class</span> <span class="code-fn">DistributedEngine</span> {
+  <span class="code-kw">constructor</span>(config) {
+    <span class="code-kw">this</span>.nodes = config.replicas;
+    <span class="code-kw">this</span>.strategy = <span class="code-str">'consistent-hash'</span>;
+  }
+
+  <span class="code-kw">async</span> <span class="code-fn">process</span>(request) {
+    <span class="code-kw">const</span> node = <span class="code-kw">this</span>.route(request);
+    <span class="code-kw">return await</span> node.execute(request);
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Photography Portfolio & Visual Stories -->
+      <div class="project-row">
+        <div class="project-text">
+          <p class="project-label">VISUAL ARTISTRY // PHOTOGRAPHY</p>
+          <h3 class="project-name">Visual Stories &amp; Architecture</h3>
+          <p class="project-desc">
+            A curated visual collection capturing fleeting moments through the art of storytelling. Exploring the intersection of light, shadow, and architectural heritage across India — from ancient temples to misty Himalayan mountain trails.
+          </p>
+          <div class="proj-tags">
+            <span>Landscape</span><span>Architecture</span><span>Travel Stories</span><span>35mm</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" class="proj-action-btn">
+              <ion-icon name="logo-instagram"></ion-icon>
+              <span>Explore on Instagram</span>
+              <ion-icon name="open-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="project-preview">
+          <div class="preview-grid">
+            <img src="./assets/images/portfolio/placeholder-1.png" alt="Photography by Kartik Dhiman" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-2.png" alt="Photography by Kartik Dhiman" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-3.png" alt="Photography by Kartik Dhiman" loading="lazy">
+            <img src="./assets/images/portfolio/placeholder-4.png" alt="Photography by Kartik Dhiman" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="section-divider">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-label">CONTACT</span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
+
+      <h2 class="section-title">Let's Build Together</h2>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-desc">
+            I'm always interested in new challenges — whether it's architecting a scalable backend,
+            leading a team, or collaborating on open-source. Have a project in mind? Let's talk.
+          </p>
+          <div class="contact-socials">
+            <a href="https://linkedin.com/in/kartik-dhiman" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="https://github.com/kartik-dhiman" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" title="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://instagram.com/sporadical_traveller" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="mailto:ikartikdhiman@gmail.com" aria-label="Send Email" title="Email"><ion-icon name="mail-outline"></ion-icon></a>
+          </div>
+        </div>
+
+        <div class="contact-map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.54004400082!2d77.06889994830484!3d28.52728034466949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1693156097424!5m2!1sen!2sin" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location Map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Designed &amp; Built by <span class="highlight">Kartik Dhiman</span> · 2026</p>
+    <p class="footer-sub">Architected for resilience · Built with HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <!-- Floating Return to Command Center Pill -->
+  <a href="#hero" class="floating-back-top" id="backToTop" aria-label="Return to top">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </a>
+
+  <!-- Interactive Natural Perching Cat Easter Egg -->
+  <div id="siteCat" class="site-cat" aria-hidden="true" title="Meow! Click to pet me 🐾">
+    <div class="cat-speech" id="catSpeech">Purr purr... 🐾</div>
+    <div class="cat-wrapper">
+      <svg class="cat-svg" viewBox="0 0 56 42" width="56" height="42" xmlns="http://www.w3.org/2000/svg">
+        <!-- Tail behind body -->
+        <g class="cat-tail-group">
+          <path d="M14 26 C8 22, 6 14, 10 8 C12 5, 16 7, 14 11 C12 15, 16 20, 18 24" fill="none" stroke="#d97706" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="10" cy="8" r="2.5" fill="#fff5eb"/>
+        </g>
+
+        <!-- Torso & Shoulders -->
+        <g class="cat-body-group">
+          <path d="M14 26 C14 18, 22 14, 28 14 C34 14, 42 18, 42 26 C42 34, 38 38, 28 38 C18 38, 14 34, 14 26 Z" fill="#d97706"/>
+          <!-- Cream Chest Bib -->
+          <path d="M22 22 C24 18, 32 18, 34 22 C35 28, 33 36, 28 37 C23 36, 21 28, 22 22 Z" fill="#fff5eb"/>
+          <!-- Subtle Tabby Side Markings -->
+          <path d="M16 22 L20 23" stroke="#b45309" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M15 26 L19 27" stroke="#b45309" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M40 22 L36 23" stroke="#b45309" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M41 26 L37 27" stroke="#b45309" stroke-width="1.2" stroke-linecap="round"/>
+        </g>
+
+        <!-- Cute White Front Paws Resting on Card Edge -->
+        <g class="cat-paws-group">
+          <!-- Left Paw -->
+          <ellipse class="cat-paw-left" cx="21" cy="38" rx="4.5" ry="3.2" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8"/>
+          <path d="M19.5 39.5 L19.5 37 M22.5 39.5 L22.5 37" stroke="#cbd5e1" stroke-width="0.7" stroke-linecap="round"/>
+          
+          <!-- Right Paw (can tap/knead) -->
+          <g class="cat-paw-right-group">
+            <ellipse cx="35" cy="38" rx="4.5" ry="3.2" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8"/>
+            <path d="M33.5 39.5 L33.5 37 M36.5 39.5 L36.5 37" stroke="#cbd5e1" stroke-width="0.7" stroke-linecap="round"/>
+          </g>
+        </g>
+
+        <!-- Head -->
+        <g class="cat-head-group">
+          <!-- Left Ear -->
+          <path class="cat-ear-left" d="M20 14 L17 4 L26 10 Z" fill="#d97706"/>
+          <path d="M20 13 L18 6 L24 10 Z" fill="#fca5a5"/>
+          <!-- Right Ear -->
+          <path class="cat-ear-right" d="M36 10 L45 4 L42 14 Z" fill="#d97706"/>
+          <path d="M38 10 L44 6 L42 13 Z" fill="#fca5a5"/>
+
+          <!-- Head Shape -->
+          <circle cx="28" cy="16" r="9.5" fill="#f59e0b"/>
+
+          <!-- Tabby M on Forehead -->
+          <path d="M25 9 L26.5 12 L28 10 L29.5 12 L31 9" fill="none" stroke="#b45309" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Left Eye -->
+          <g class="cat-eye cat-eye-left">
+            <ellipse cx="23.5" cy="15.5" rx="2" ry="2.2" fill="#84cc16"/>
+            <ellipse cx="23.7" cy="15.5" rx="0.7" ry="1.8" fill="#0f172a"/>
+            <circle cx="23" cy="14.5" r="0.6" fill="#ffffff"/>
+          </g>
+
+          <!-- Right Eye -->
+          <g class="cat-eye cat-eye-right">
+            <ellipse cx="32.5" cy="15.5" rx="2" ry="2.2" fill="#84cc16"/>
+            <ellipse cx="32.7" cy="15.5" rx="0.7" ry="1.8" fill="#0f172a"/>
+            <circle cx="32" cy="14.5" r="0.6" fill="#ffffff"/>
+          </g>
+
+          <!-- Whiskers -->
+          <line x1="19" y1="18" x2="11" y2="16" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
+          <line x1="19" y1="19.5" x2="10" y2="20" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
+          <line x1="37" y1="18" x2="45" y2="16" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
+          <line x1="37" y1="19.5" x2="46" y2="20" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
+
+          <!-- Pink Nose & Cat Smile -->
+          <polygon points="27.2,18 28.8,18 28,18.8" fill="#f472b6"/>
+          <path d="M28 18.8 C27.5 19.5, 26.6 19.5, 26.2 19.1 M28 18.8 C28.5 19.5, 29.4 19.5, 29.8 19.1" fill="none" stroke="#b45309" stroke-width="0.9" stroke-linecap="round"/>
+        </g>
+      </svg>
     </div>
   </div>
 
-  <!-- loader -->
-  <div id="custom-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-        stroke="#F96D00" />
-    </svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="./assets/js/script.js?v=4.7"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
